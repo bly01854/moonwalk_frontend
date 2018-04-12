@@ -9,12 +9,11 @@ class Navigation extends Component {
       <Navbar inverse collapseOnSelect className="navbar-custom" fixedTop >
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#brand">React-Bootstrap</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
-          <Nav pullRight>
+          <Nav pullRight className="extra-pull">
             <NavItem eventKey={1} href="#">
               Login
             </NavItem>

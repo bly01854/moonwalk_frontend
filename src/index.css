@@ -4,6 +4,7 @@ body {
   font-family: sans-serif;
 }
 
+/* Landing page bar graph text */
 .graph {
   color: azure;
   font-family: Arial, Helvetica, sans-serif;
@@ -11,7 +12,8 @@ body {
 }
 
 .transparent {
-  background:rgba(20, 20, 20, 0.25)
+  background:rgba(59, 59, 59, 0.5);
+  padding-top: 20px;
 }
 
 .logo {
@@ -19,11 +21,12 @@ body {
   max-height: 100%;
 }
 
+/*Remove margin from landing page*/
 .remove-margin {
   width: 100%;
   padding-top: 10px;
   min-height: 100vh;
-  padding-top: 61px;
+  padding-top: 50px;
 }
 
 .navbar-custom {
@@ -42,3 +45,26 @@ body {
   font-family: 'Impact';
   letter-spacing: 24px;
 }
+
+.landing-side-pane {
+  padding-top: 20px;
+}
+
+@media (min-width: 1600px) {
+  .extra-pull {
+    margin-right: -15%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .extra-pull {
+    margin-right: -30%;
+  }
+}
+
+/*Bar graph shapes*/
+.bar {
+  height: 20px;
+  background-color: dodgerblue;
+}
+
