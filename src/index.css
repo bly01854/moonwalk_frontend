@@ -4,10 +4,23 @@ body {
   font-family: sans-serif;
 }
 
+/*Bar graph shapes*/
+.bar {
+  height: 15px;
+  background-color: dodgerblue;
+  display: inline-block;
+}
+
 /* Landing page bar graph text */
 .graph {
   color: azure;
   font-family: Arial, Helvetica, sans-serif;
+  padding-right: 10%;
+  display: inline;
+}
+
+.graph-row {
+  margin-bottom: 10px;
   margin-left: 10px;
 }
 
@@ -19,6 +32,7 @@ body {
 .logo {
   max-width: 100%;
   max-height: 100%;
+  margin-left: 15px;
 }
 
 /*Remove margin from landing page*/
@@ -39,11 +53,29 @@ body {
 
 }
 
-.get-moving {
+.font-get-moving {
   color: #fff;
-  font-size: 112px;
-  font-family: 'Impact';
-  letter-spacing: 24px;
+  font-size: 90px;
+  font: 'Lulo Clean';
+  font-weight: 900;
+  letter-spacing: 12px;
+  margin-top:50px;
+}
+.font-mission {
+  color: #fff;
+  font-size: 70px;
+  font: 'Arial Unicode MS';
+  font-weight: 700;
+  letter-spacing: 12px;
+}
+.font-to-the {
+  color: #fff;
+  font-size: 26px;
+  font: 'Arial Narrow';
+  font-weight: 600;
+  letter-spacing: 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .landing-side-pane {
@@ -62,9 +94,5 @@ body {
   }
 }
 
-/*Bar graph shapes*/
-.bar {
-  height: 20px;
-  background-color: dodgerblue;
-}
+
 

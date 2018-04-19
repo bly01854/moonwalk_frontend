@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { Grid, Row, Col } from "react-bootstrap";
 
+import FontAwesome from 'react-fontawesome';
+
 import Bar from "./Bar";
 
 class Landing extends Component {
@@ -10,27 +12,28 @@ class Landing extends Component {
       <Grid className="remove-margin">
         <Row className="show-grid">
           <Col xsHidden smHidden md={3} lg={3} className="landing-side-pane">
-            <Col md={4}  className="pull-left">
-              <Row>
-                  <h5 className='graph'>Walking</h5>
+            <Col md={12}>
+              <Row className="graph-row">
+                  <p className='graph'>Walking</p>
                   <Bar width = '10%' />
               </Row>
-              <Row>
-                  <h5 className='graph'>Running</h5>
+              <Row className="graph-row">
+                  <p className='graph'>Running</p>
                   <Bar width = '10%' />
               </Row>
-              <Row>
-                  <h5 className='graph'>Cycling</h5>
+              <Row className="graph-row">
+                  <p className='graph'>Cycling</p>
                   <Bar width = '10%' />
               </Row>
             </Col>
           </Col>
           <Col md={6} lg={6} className="text-center transparent">
             <Row>
-            <img className="logo" src={require("../assets/mission-white-text.png")} alt="Mission to the Moon" />
-            </Row>
-            <Row>
-                <h1 className="get-moving">LET'S GET MOVING!</h1>
+              <h1 className="font-mission">MISSION</h1>
+              <h1 className="font-to-the">TO THE</h1>
+              <img className="logo" src={require("../assets/logo.png")} alt="Mission to the Moon" />
+              <h1 className="font-get-moving">LET'S GET MOVING!</h1>
+              <FontAwesome name="rocket" />
             </Row>
           </Col>
           <Col md={3} lg={3} className="text-center">
