@@ -6,27 +6,42 @@ body {
 
 /*Bar graph shapes*/
 .bar {
-  height: 15px;
+  padding: 5px;
+  margin: 10px;
+  color: dodgerblue;
   background-color: dodgerblue;
   display: inline-block;
+  font: 'Arial Narrow';
+  font-weight: bold;
 }
 
 /* Landing page bar graph text */
-.graph {
+.graph-container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.graph-column {
+  display: flex;
+  flex-direction: column;
+}
+.graph-item {
   color: azure;
-  font-family: Arial, Helvetica, sans-serif;
-  padding-right: 10%;
-  display: inline;
+  font: 'Arial Narrow';
+  font-weight: bold;
+  padding: 10%;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
-.graph-row {
-  margin-bottom: 10px;
-  margin-left: 10px;
-}
+
 
 .transparent {
-  background:rgba(59, 59, 59, 0.5);
+  background:rgba(30, 30, 30, 0.5);
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .logo {
@@ -76,6 +91,12 @@ body {
   letter-spacing: 10px;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.social-media-row {
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .landing-side-pane {

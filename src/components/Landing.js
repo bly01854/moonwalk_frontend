@@ -2,9 +2,11 @@ import React, { Component } from "react";
 
 import { Grid, Row, Col } from "react-bootstrap";
 
-import FontAwesome from 'react-fontawesome';
-
 import Bar from "./Bar";
+
+const FontAwesome = require('react-fontawesome');
+
+
 
 class Landing extends Component {
   render() {
@@ -13,18 +15,20 @@ class Landing extends Component {
         <Row className="show-grid">
           <Col xsHidden smHidden md={3} lg={3} className="landing-side-pane">
             <Col md={12}>
-              <Row className="graph-row">
-                  <p className='graph'>Walking</p>
-                  <Bar width = '10%' />
-              </Row>
-              <Row className="graph-row">
-                  <p className='graph'>Running</p>
-                  <Bar width = '10%' />
-              </Row>
-              <Row className="graph-row">
-                  <p className='graph'>Cycling</p>
-                  <Bar width = '10%' />
-              </Row>
+            <div className="graph-container">
+              <div className = "graph-column">
+                  <div className = "graph-item">WALKING</div>
+                  <div className = "graph-item">RUNNING</div>
+                  <div className = "graph-item">CYCLING</div>
+              </div>
+            </div>
+            <div className="graph-container">
+              <div className="graph-column">
+                  <Bar width = "100" />
+                  <Bar width = "200" />
+                  <Bar width = "300" />
+              </div>
+            </div>
             </Col>
           </Col>
           <Col md={6} lg={6} className="text-center transparent">
@@ -33,11 +37,16 @@ class Landing extends Component {
               <h1 className="font-to-the">TO THE</h1>
               <img className="logo" src={require("../assets/logo.png")} alt="Mission to the Moon" />
               <h1 className="font-get-moving">LET'S GET MOVING!</h1>
-              <FontAwesome name="rocket" />
+              <Row >
+              <FontAwesome name="facebook" inverse="true" size="3x" className="social-media-row" />
+              <FontAwesome name="twitter" inverse="true" size="3x" className="social-media-row" />
+              <FontAwesome name="instagram" inverse="true" size="3x" className="social-media-row" />
+              </Row>
+              
             </Row>
           </Col>
           <Col md={3} lg={3} className="text-center">
-            <h1>Hello</h1>
+            
           </Col>
         </Row>
       </Grid>
