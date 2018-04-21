@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 
 import Bar from "./Bar";
+import UserInput from "./UserInput";
 
 const FontAwesome = require('react-fontawesome');
 
@@ -45,8 +46,8 @@ class Landing extends Component {
               
             </Row>
           </Col>
-          <Col md={3} lg={3} className="text-center">
-            
+          <Col md={3} lg={3}>
+            <UserInput />
           </Col>
         </Row>
       </Grid>

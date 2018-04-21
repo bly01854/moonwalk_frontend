@@ -44,6 +44,15 @@ class Navigation extends Component {
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
+          <Nav>
+            <img className="navbar-earth" src={require("../assets/earth.png")} alt="Earth" />
+            <div className="navbar-line-container">
+              <div className="navbar-line"></div>
+              <div className="navbar-circle"></div>
+            </div>
+            <img className="navbar-moon" src={require("../assets/moon.png")} alt="Moon" />
+            <div className="navbar-meter-text">(150,000 of 238,900 miles)</div>
+          </Nav>
           <Nav pullRight className="extra-pull">
             <NavItem eventKey={1} onSelect={this.loginShow}>
               Login

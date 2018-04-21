@@ -4,6 +4,68 @@ body {
   font-family: sans-serif;
 }
 
+/*navbar centering */
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.navbar-earth {
+  display:inline-block;
+  
+  margin-top: 5px;
+  max-height: 40px;
+  align-content: left;
+  
+}
+
+.navbar-moon {
+  display:inline-block;
+  
+  margin-top: 5px;
+  max-height: 40px;
+  align-content: right;
+}
+
+.navbar-line-container {
+  display: inline-block;
+  height: 10px;
+  width: 75vh;
+  padding: 0;
+}
+
+.navbar-line {
+  position: absolute;
+  margin-top: 10px;
+  z-index: 1;
+  height: 2px;
+  width: 75vh;
+  padding: 0;
+  background: #fff
+}
+
+.navbar-meter-text {
+  color:#fff;
+  margin-top: -5px;
+}
+
+.navbar-circle {
+  background-color: green;
+  position: absolute;
+  z-index: 2;
+  height: 10px;
+  width: 10px;
+  margin-top: 7px;
+  border-radius: 50%;
+}
+
+
+
 /*Bar graph shapes*/
 .bar {
   padding: 5px;
@@ -22,6 +84,7 @@ body {
   justify-content: center;
 }
 .graph-column {
+  margin-top: 1vh;
   display: flex;
   flex-direction: column;
 }
@@ -49,6 +112,7 @@ body {
   max-height: 100%;
   margin-left: 15px;
 }
+
 
 /*Remove margin from landing page*/
 .remove-margin {
@@ -101,6 +165,17 @@ body {
 
 .landing-side-pane {
   padding-top: 20px;
+}
+
+.input-container {
+  margin-top: 20vh;
+  border-radius: 10%;
+  border-width: 1px;
+  border-color: dodgerblue;
+  background-color: rgba(30, 30, 30, 0.5);
+  border-style: solid;
+  margin-left: 2vh;
+  margin-right: 2vh;
 }
 
 @media (min-width: 1600px) {
