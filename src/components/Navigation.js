@@ -3,6 +3,9 @@ import React, { Component } from "react";
 // Bootstrap
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Modal } from "react-bootstrap";
 
+import Login from "./Login";
+import Register from "./Register";
+
 class Navigation extends Component {
   constructor(props, context) {
     super(props, context);
@@ -35,7 +38,20 @@ class Navigation extends Component {
     this.setState({ regShow: false});
   }
 
+  
+
+  
+
   render() {
+
+    function progressCalculation(progress) {
+      let percentProgress = ((progress / 238900) * 0.75) * 100;
+      percentProgress = percentProgress + "vh";
+      return percentProgress;
+    }
+
+    const progress = progressCalculation(this.props.totalMiles);
+
     return (
       <Navbar inverse collapseOnSelect className="navbar-custom" fixedTop >
         <Navbar.Header>
@@ -48,35 +64,45 @@ class Navigation extends Component {
             <img className="navbar-earth" src={require("../assets/earth.png")} alt="Earth" />
             <div className="navbar-line-container">
               <div className="navbar-line"></div>
-              <div className="navbar-circle"></div>
+              <div className="navbar-circle" style={{marginLeft : progress }}></div>
             </div>
             <img className="navbar-moon" src={require("../assets/moon.png")} alt="Moon" />
-            <div className="navbar-meter-text">(150,000 of 238,900 miles)</div>
+            <div className="navbar-meter-text">({this.props.totalMiles} of 238900 miles)</div>
           </Nav>
-          <Nav pullRight className="extra-pull">
-            <NavItem eventKey={1} onSelect={this.loginShow}>
+          
+            {this.props.loggedIn ? (
+              <Nav pullRight className="extra-pull">
+              <NavItem>Logout</NavItem>
+              </Nav>
+            ) : (
+              <Nav pullRight className="extra-pull">
+              <NavItem eventKey={1} onSelect={this.loginShow}>
               Login
             </NavItem>
-            <Modal show={this.state.logShow} onHide={this.loginClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>LOGIN</Modal.Title>
+            <Modal show={this.state.logShow} onHide={this.loginClose} >
+              <Modal.Header closeButton className="transparent">
+                <Modal.Title className="login-header">LOGIN</Modal.Title>
               </Modal.Header>
-              <Modal.Body>
-
+              <Modal.Body className="login-background">
+                <Login />
               </Modal.Body>
             </Modal>
             <NavItem eventKey={2} onSelect={this.registerShow}>
               Register
             </NavItem>
             <Modal show={this.state.regShow} onHide={this.registerClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>Register</Modal.Title>
+              <Modal.Header closeButton className="transparent">
+                <Modal.Title className="login-header">Register</Modal.Title>
               </Modal.Header>
-              <Modal.Body>
-
+              <Modal.Body className="login-background">
+                <Register />
               </Modal.Body>
             </Modal>
-          </Nav>
+            </Nav>
+            
+            )}
+            
+          
         </Navbar.Collapse>
       </Navbar>
     );

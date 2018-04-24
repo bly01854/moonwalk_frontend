@@ -10,7 +10,17 @@ const FontAwesome = require('react-fontawesome');
 
 
 class Landing extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+
+    function calculateBarWidth(progress) {
+      let percentProgress = ((progress / 238900) * 0.4) * 100;
+      percentProgress = percentProgress + "vh";
+      return percentProgress; 
+    }
+
     return (
       <Grid className="remove-margin">
         <Row className="show-grid">
@@ -25,9 +35,9 @@ class Landing extends Component {
             </div>
             <div className="graph-container">
               <div className="graph-column">
-                  <Bar width = "100" />
-                  <Bar width = "200" />
-                  <Bar width = "300" />
+                  <Bar width = {calculateBarWidth(this.props.walkingMiles)} />
+                  <Bar width = {calculateBarWidth(this.props.runningMiles)} />
+                  <Bar width = {calculateBarWidth(this.props.cyclingMiles)} />
               </div>
             </div>
             </Col>
@@ -47,7 +57,8 @@ class Landing extends Component {
             </Row>
           </Col>
           <Col md={3} lg={3}>
-            <UserInput />
+            {this.props.loggedIn == true && 
+            <UserInput/>}
           </Col>
         </Row>
       </Grid>

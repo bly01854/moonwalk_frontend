@@ -38,6 +38,10 @@
     color: #333;
 }
 
+option {
+    color: #333;
+}
+
 .user-input-input:focus {
     border-bottom: 2px solid #fff
 }
@@ -65,4 +69,14 @@
 .user-input-button:hover {
     background: #fff;
     color: rgba(30, 30, 30, 0.5);
+}
+
+.login-background {
+    background: rgba(30, 30, 30, 0.5);
+    padding-bottom: 10vh;
+}
+
+.login-header {
+    width: 180px;
+    color: #fff;
 }
