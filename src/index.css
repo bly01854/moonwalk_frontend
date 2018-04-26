@@ -10,8 +10,93 @@ body {
   margin-left: 10px;
 }
 
-.transparent {
+.transparent-light {
   background:rgba(20, 20, 20, 0.25)
+}
+
+.transparent-dark {
+  background:rgba(20, 20, 20, 0.75)
+}
+
+.blue-bar {
+  padding: 20px 0;
+  background: rgb(122, 164, 232);
+  color: #ffffff;
+  font-size: 35px;
+  font-family: 'Raleway', sans-serif;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+.bottom-border {
+  border-bottom: 1px solid #ffffff;
+}
+
+.black-background {
+  background: #000;
+}
+
+.grey-background {
+  background: #555;
+}
+
+.title {
+  font-family: 'Kanit', sans-serif;
+}
+
+.sub-header {
+  color: #999;
+}
+
+.header {
+  max-width: 220px;
+  font-size: 30px;
+  letter-spacing: 4px;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+
+.content {
+  font-family: 'Raleway', sans-serif;
+}
+
+.mission-col {
+  height: 400px;
+}
+
+.ease-col{
+  height: 360px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center; 
+}
+
+.flex-bottom {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+}
+
+.content-left {
+  justify-content: left;
+}
+
+.content-right {
+  justify-content: right;
+}
+
+.mission-image {
+  max-height: 400px;
+  max-width: 100%;
+}
+
+.content-container {
+  max-width: 400px;
+  text-align: left;
+  padding: 0 50px;
+  color: #ffffff;
 }
 
 .logo {
@@ -41,4 +126,46 @@ body {
   font-size: 112px;
   font-family: 'Impact';
   letter-spacing: 24px;
+}
+
+.ease-title-container {
+  margin: 20px 0 5px 0;
+}
+.ease-title {
+  color: #fff;
+  font-size: 60px;
+  line-height: 55px;
+  font-weight: bold;
+  text-shadow: 0px 0px 14px rgba(0,0,0, 1);
+}
+.ease-subtitle {
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  text-shadow: 0px 0px 14px rgba(0,0,0, 1);
+}
+.ease-content-container {
+  color: #fff;
+  text-align: left;
+  font-size: 12px;
+}
+.ease-content-container ul{
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.ease-button {
+  position: absolute;
+  background-color: transparent;
+  width: 80%;
+  height: auto;
+  border: 0;
+  bottom:   20px;
+  left: 10%;
+}
+
+@media (max-width: 576px) { 
+  .ease-col{
+    height: auto;
+    min-height: 120px;
+  }
 }
