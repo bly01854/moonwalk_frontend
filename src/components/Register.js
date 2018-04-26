@@ -1,39 +1,117 @@
 import React, { Component } from "react";
 
+import $ from "jquery";
+
 class Register extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = ({
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      county: "",
+      birthDate: "",
+      gender: "",
+      preferredMeasure: "MI"
+    });
+
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleConfirmPasswordChange = this.handleConfirmPasswordChange.bind(this);
+    this.handleCountyChange = this.handleCountyChange.bind(this);
+    this.handleBirthDateChange = this.handleBirthDateChange.bind(this);
+    this.handleGenderChange = this.handleGenderChange.bind(this);
+
+    this.loginUser = this.loginUser.bind(this);
+  }
+
+  handleNameChange(e) {
+    this.setState({name: e.target.value});
+  }
+  handleEmailChange(e) {
+    this.setState({email: e.target.value});
+  }
+  handlePasswordChange(e) {
+    this.setState({password: e.target.value});
+  }
+  handleConfirmPasswordChange(e) {
+    this.setState({confirmPassword: e.target.value});
+  }
+  handleCountyChange(e) {
+    this.setState({county: e.target.value});
+  }
+  handleBirthDateChange(e) {
+    this.setState({birthDate: e.target.value});
+  }
+  handleGenderChange(e) {
+    this.setState({gender: e.target.value});
+  }
+
+  loginUser(e) {
+    const url = "https://moonwalk-dev.herokuapp.com/auth/register";
+    e.preventDefault();
+
+    const postData = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      county: this.state.county,
+      birthDate: this.state.birthDate,
+      gender: this.state.gender,
+      preferredMeasure: this.state.preferredMeasure
+    }
+
+    $.post(url, postData, function(result){
+
+    } )
+  }
+
   render() {
     return (
       <form>
         <p className="user-input-label" type="Email:">
           <input type="text"
             className="user-input-input"
+            value={this.state.email}
+            onChange={this.handleEmailChange}
           />
         </p>
         <p className="user-input-label" type="Password:">
         <input type="text"
             className="user-input-input"
+            value={this.state.password}
+            onChange={this.handlePasswordChange}
           />
         </p>
         <p className="user-input-label" type="Confirm Password:">
         <input type="text"
             className="user-input-input"
+            value={this.state.confirmPassword}
+            onChange={this.handleConfirmPasswordChange}
           />
         </p>
         <p className="user-input-label" type="Name:">
-            <input type="text" className="user-input-input" />
+            <input type="text" className="user-input-input"
+            value={this.state.name}
+            onChange={this.handleNameChange} />
         </p>
         <p className="user-input-label" type="Gender:">
-            <select className="user-input-input">
-                <option className="user-input-option" value="male">Male</option>
-                <option className="user-input-option" value="female">Female</option>
-                <option className="user-input-option" value="other">Other / Do not wish to specify</option>
+            <select className="user-input-input" onChange={this.handleGenderChange}>
+                <option className="user-input-option" value="M">Male</option>
+                <option className="user-input-option" value="F">Female</option>
+                <option className="user-input-option" value="O">Other / Do not wish to specify</option>
             </select>
         </p>
         <p className="user-input-label" type="Date of Birth:">
-            <input type="date" className="user-input-input" />
+            <input type="date" className="user-input-input"
+            value={this.state.birthDate}
+            onChange={this.handleBirthDateChange} />
         </p>
         <p className="user-input-label" type="County:">
-            <select className="user-input-input">
+            <select className="user-input-input" onChange={this.handleCountyChange}>
             <option value="1">Adair County</option>
             <option value="2">Allen County</option>
             <option value="3">Anderson County</option>
@@ -158,7 +236,7 @@ class Register extends Component {
             </select>
         </p>
         
-        <button className="user-input-button">Register</button>
+        <button className="user-input-button" onClick={this.registerUser}>Register</button>
       </form>
     );
   }

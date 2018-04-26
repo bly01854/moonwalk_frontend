@@ -16,10 +16,16 @@ class Navigation extends Component {
     this.registerShow = this.registerShow.bind(this);
     this.registerClose = this.registerClose.bind(this);
 
+    this.handleLogin = this.handleLogin.bind(this);
+
     this.state = {
       logShow: false,
       regShow: false,
     };
+  }
+
+  handleLogin(status, id) {
+    this.props.onLoginChange(status, id);
   }
 
   loginShow() {
@@ -84,7 +90,7 @@ class Navigation extends Component {
                 <Modal.Title className="login-header">LOGIN</Modal.Title>
               </Modal.Header>
               <Modal.Body className="login-background">
-                <Login />
+                <Login handleLogin={this.handleLogin} />
               </Modal.Body>
             </Modal>
             <NavItem eventKey={2} onSelect={this.registerShow}>
