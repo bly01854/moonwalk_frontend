@@ -20,10 +20,12 @@ class Landing extends Component {
           </Col>
           <Col md={8} lg={6} className="text-center transparent-light">
             <Row>
-            <img className="logo" src={require("../assets/mission-white-text.png")} alt="Mission to the Moon" />
+              <span className="block header-title">MISSION</span>
+              <span className="block header-subtitle">TO THE</span>
+              <img className="logo" src={require("../assets/mission-to-the-moon-white-logo.png")} alt="Mission to the Moon" />
             </Row>
             <Row>
-                <h1 className="get-moving">LET'S GET MOVING!</h1>
+                <span className="block get-moving">LET'S GET MOVING!</span>
             </Row>
           </Col>
           <Col md={2} lg={3} className="text-center">

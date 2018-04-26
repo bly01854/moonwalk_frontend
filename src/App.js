@@ -11,10 +11,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="background"></div>
         <Navigation />
-        <Parallax bgImage={require('./assets/standing-on-the-moon-space-plain.jpg')} strength={500}>
-          <Landing/>
-        </Parallax>
+        <Landing/>
       </div>
     );
   }

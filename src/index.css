@@ -4,6 +4,24 @@ body {
   font-family: sans-serif;
 }
 
+.remove-margin {
+  color: #fff;
+}
+
+.background {
+  z-index: -999;
+  position: fixed;
+  width: auto;
+  height: auto;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url("assets/standing-on-the-moon-space-plain.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
 .graph {
   color: azure;
   font-family: Arial, Helvetica, sans-serif;
@@ -26,6 +44,10 @@ body {
   font-family: 'Raleway', sans-serif;
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
+}
+
+.blue-bar .row{
+  margin: 0 !important;
 }
 
 .bottom-border {
@@ -65,7 +87,7 @@ body {
 }
 
 .ease-col{
-  height: 360px;
+  height: 420px;
 }
 
 .flex-center {
@@ -123,9 +145,11 @@ body {
 
 .get-moving {
   color: #fff;
-  font-size: 112px;
-  font-family: 'Impact';
-  letter-spacing: 24px;
+  font-size: 70px;
+  line-height: 70px;
+  font-family: 'Kanit', sans-serif;
+  letter-spacing: 10px;
+  margin: 10px 0 40px 0;
 }
 
 .ease-title-container {
@@ -159,8 +183,27 @@ body {
   width: 80%;
   height: auto;
   border: 0;
-  bottom:   20px;
+  bottom:   30px;
   left: 10%;
+}
+
+.block {
+  display: block;
+}
+.header-title {
+  color: #fff;
+  font-family: arial;
+  letter-spacing: 10px;
+  font-size: 55px;
+  line-height: 65px;
+  text-shadow: 0px 0px 14px rgba(197, 198, 157, 1);
+}
+.header-subtitle {
+  color: #fff;
+  font-family: arial;
+  letter-spacing: 8px;
+  font-size: 20px;
+  text-shadow: 0px 0px 14px rgba(197, 198, 157, 1);
 }
 
 @media (max-width: 576px) { 

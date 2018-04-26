@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 // Bootstrap and CSS
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
+//import 'bootstrap/dist/css/bootstrap-theme.css';
 // Other CSS imports below:
 import './index.css';
 
