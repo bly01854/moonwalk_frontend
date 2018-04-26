@@ -39,9 +39,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+<<<<<<< HEAD
         <div className="background"></div>
         <Navigation loggedIn={this.state.loggedIn} totalMiles={this.state.totalMiles} onLoginChange={this.handleLogin} />
         <Landing loggedIn={this.state.loggedIn} walkingMiles={this.state.walkingMiles} runningMiles={this.state.runningMiles} cyclingMiles={this.state.cyclingMiles}/>
+=======
+        <Navigation loggedIn={this.state.loggedIn} totalMiles={this.state.totalMiles} onLoginChange={this.handleLogin} />
+        <Parallax bgImage={require('./assets/standing-on-the-moon-space-plain.jpg')} strength={500}>
+          <Landing loggedIn={this.state.loggedIn} walkingMiles={this.state.walkingMiles} runningMiles={this.state.runningMiles} cyclingMiles={this.state.cyclingMiles}/>
+        </Parallax>
+>>>>>>> master
       </div>
     );
   }
