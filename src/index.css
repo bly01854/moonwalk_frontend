@@ -364,6 +364,11 @@ body {
   width: 100%;
 }
 
+.image-right {
+  position: absolute;
+  right: 0;
+}
+
 @media (max-width: 576px) { 
   .ease-col{
     height: auto;
