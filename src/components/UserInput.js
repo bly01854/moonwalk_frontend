@@ -4,7 +4,7 @@ class UserInput extends Component {
   render() {
     return (
       <form className="user-input-form">
-        <h2 className="user-input-header">Log Your Distance</h2>
+        <h2 className="user-input-header">Log Your Miles</h2>
         <p className="user-input-label" type="Distance:">
           <input type="number"
             className="user-input-input"

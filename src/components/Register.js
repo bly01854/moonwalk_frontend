@@ -80,14 +80,14 @@ class Register extends Component {
           />
         </p>
         <p className="user-input-label" type="Password:">
-        <input type="text"
+        <input type="password"
             className="user-input-input"
             value={this.state.password}
             onChange={this.handlePasswordChange}
           />
         </p>
         <p className="user-input-label" type="Confirm Password:">
-        <input type="text"
+        <input type="password"
             className="user-input-input"
             value={this.state.confirmPassword}
             onChange={this.handleConfirmPasswordChange}

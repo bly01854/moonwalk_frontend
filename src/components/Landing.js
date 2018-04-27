@@ -48,10 +48,9 @@ class Landing extends Component {
               <h1 className="font-to-the">TO THE</h1>
               <img className="logo" src={require("../assets/logo.png")} alt="Mission to the Moon" />
               <h1 className="font-get-moving">LET'S GET MOVING!</h1>
-              <Row >
-              <FontAwesome name="facebook" inverse="true" size="3x" className="social-media-row" />
-              <FontAwesome name="twitter" inverse="true" size="3x" className="social-media-row" />
-              <FontAwesome name="instagram" inverse="true" size="3x" className="social-media-row" />
+              <Row className="media-row">
+              <a href="https://www.facebook.com/christiancountyhd"><FontAwesome name="facebook" inverse="true" size="3x" className="social-media-row" /></a>
+              <a href="https://www.youtube.com/channel/UCsvhA-y0CtaeP1Lma5tlGcA"><FontAwesome name="youtube" inverse="true" size="3x" className="social-media-row" /></a>
               </Row>
               
             </Row>
@@ -95,12 +94,6 @@ class Landing extends Component {
               </div>
             </Row>
             <Row>
-              <Col sm={6} md={6} lg={6} className="ease-col">
-                <button className="ease-button">
-                  <img className="" src={require("../assets/walk-with-ease-logo-grayscale.png")} alt="Mission to the Moon" />
-                </button>
-              </Col>
-              <Col sm={6} md={6} lg={6} className="ease-col">
                 <div className="ease-content-container">
                   <p>No matter if you need relief from arthritis pain or just want to be active, the Arthritis Foundation's six week, SELF-STUDY Walk With Ease program can teach you how to safely make physcal activity part of your everyday life.</p>
                   <span>Request a <u>FREE</u> Walk With Ease Self-Study Guidebook and:</span>
@@ -117,9 +110,12 @@ class Landing extends Component {
                     <li>Build confidence in your ability to be physically active.</li>
                     <li>Improve overall health.</li>
                   </ul>
-                  <p>Request your self-study guide via email at a.bassingthwaite@ky.gov or stop by the Christian County Department for your free copy!</p>
+                  <p>Request your self-study guide via email at <a href="mailto:a.bassingthwaite@ky.gov"  target="_top">a.bassingthwaite@ky.gov</a> or stop by the Christian County Department for your free copy!</p>
                 </div>
-              </Col>
+
+                <a className="ease-button" href="https://www.youtube.com/watch?v=XYu7PFlZXYQ">
+                  <img className="" src={require("../assets/walk-with-ease-logo-grayscale.png")} alt="Mission to the Moon" />
+                </a>
             </Row>
           </Col>
           <Col xsHidden sm={2} md={2} lg={3} className="">
