@@ -322,6 +322,8 @@ body {
   text-align: left;
   font-size: 12px;
   padding: 10px;
+  max-width: 500px;
+   margin: 0 auto;
 }
 .ease-content-container ul{
   padding-left: 20px;
