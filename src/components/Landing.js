@@ -70,7 +70,7 @@ class Landing extends Component {
         <Row className="show-grid bottom-border">
           <Col xsHidden sm={6} md={6} lg={6} className="text-center black-background mission-col flex-center content-right">
             <Row>
-              <img className="mission-image" src={require("../assets/earth-to-moon-mileage.png")} alt="Mission to the Moon" />
+              <img className="mission-image image-right" src={require("../assets/earth-to-moon-mileage.png")} alt="Mission to the Moon" />
             </Row>
           </Col>
           <Col sm={6} md={6} lg={6} className="text-center grey-background mission-col flex-center content-left">
