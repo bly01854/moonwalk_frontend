@@ -1,8 +1,9 @@
 {
-  "main.css": "static/css/main.f3be7f3e.css",
-  "main.css.map": "static/css/main.f3be7f3e.css.map",
-  "main.js": "static/js/main.e379062e.js",
-  "main.js.map": "static/js/main.e379062e.js.map",
+  "main.css": "static/css/main.5917c172.css",
+  "main.css.map": "static/css/main.5917c172.css.map",
+  "main.js": "static/js/main.969c1452.js",
+  "main.js.map": "static/js/main.969c1452.js.map",
+  "static\\media\\MTM-logo.png": "static/media/MTM-logo.9a61a912.png",
   "static\\media\\earth-to-moon-mileage.png": "static/media/earth-to-moon-mileage.37cd4d12.png",
   "static\\media\\earth.png": "static/media/earth.6b9a7c1b.png",
   "static\\media\\fontawesome-webfont.eot": "static/media/fontawesome-webfont.674f50d2.eot",
@@ -15,9 +16,8 @@
   "static\\media\\glyphicons-halflings-regular.ttf": "static/media/glyphicons-halflings-regular.e18bbf61.ttf",
   "static\\media\\glyphicons-halflings-regular.woff": "static/media/glyphicons-halflings-regular.fa277232.woff",
   "static\\media\\glyphicons-halflings-regular.woff2": "static/media/glyphicons-halflings-regular.448c34a5.woff2",
-  "static\\media\\logo.png": "static/media/logo.04afe9cc.png",
   "static\\media\\logo.svg": "static/media/logo.ee7cd8ed.svg",
+  "static\\media\\mission-to-the-moon-background.png": "static/media/mission-to-the-moon-background.d1bb3b50.png",
   "static\\media\\moon.png": "static/media/moon.96c2e0e3.png",
-  "static\\media\\standing-on-the-moon-space-plain.jpg": "static/media/standing-on-the-moon-space-plain.d2adfe4e.jpg",
   "static\\media\\walk-with-ease-logo-grayscale.png": "static/media/walk-with-ease-logo-grayscale.1b02c662.png"
 }
