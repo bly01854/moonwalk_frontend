@@ -11,7 +11,7 @@ body {
   height: auto;
   min-width: 100vw;
   min-height: 100vh;
-  background-image: url("assets/standing-on-the-moon-space-plain.jpg");
+  background-image: url("assets/mission-to-the-moon-background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -124,6 +124,7 @@ body {
 .logo {
   max-width: 100%;
   max-height: 100%;
+  margin-bottom: 20px;
 }
 
 
@@ -151,7 +152,6 @@ body {
   font: 'Lulo Clean';
   font-weight: 900;
   letter-spacing: 0;
-  margin-top:50px;
 }
 .font-mission {
   color: #fff;
@@ -234,6 +234,9 @@ body {
 .bottom-border {
   border-bottom: 1px solid #ffffff;
 }
+.top-border {
+  border-top: 1px solid #ffffff;
+}
 
 .black-background {
   background: #000;
@@ -261,6 +264,7 @@ body {
 
 .content {
   font-family: 'Raleway', sans-serif;
+  font-size: 15px;
 }
 
 .mission-col {
@@ -320,7 +324,7 @@ body {
 .ease-content-container {
   color: #fff;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   padding: 10px;
   max-width: 500px;
    margin: 0 auto;
@@ -369,6 +373,30 @@ body {
 .image-right {
   position: absolute;
   right: 0;
+  top: 0;
+}
+
+.sub-titles {
+  display: block;
+  font-size: 26px;
+  font-weight: 300;
+}
+.sub-titles b{
+  color: #d5d5ea;
+}
+.sub-content {
+  font-size: 16px;
+}
+.title-container {
+  color: #ffffff;
+  padding: 15px; 
+  width: 100%; 
+  height: 100%;
+}
+.title-divider {
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  margin: 20px 0;
 }
 
 @media (max-width: 576px) { 
