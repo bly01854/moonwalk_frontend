@@ -3,50 +3,15 @@ import React, { Component } from "react";
 // Bootstrap
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Modal } from "react-bootstrap";
 
-import Login from "./Login";
-import Register from "./Register";
-
 class Navigation extends Component {
   constructor(props, context) {
     super(props, context);
-
-    this.loginShow = this.loginShow.bind(this);
-    this.loginClose = this.loginClose.bind(this);
-
-    this.registerShow = this.registerShow.bind(this);
-    this.registerClose = this.registerClose.bind(this);
-
-    this.handleLogin = this.handleLogin.bind(this);
 
     this.state = {
       logShow: false,
       regShow: false,
     };
   }
-
-  handleLogin(status, id) {
-    this.props.onLoginChange(status, id);
-  }
-
-  loginShow() {
-    this.setState({ logShow: true});
-  }
-
-  loginClose() {
-    this.setState({ logShow: false});
-  }
-
-  registerShow() {
-    this.setState({ regShow: true});
-  }
-
-  registerClose() {
-    this.setState({ regShow: false});
-  }
-
-  
-
-  
 
   render() {
 
@@ -73,42 +38,8 @@ class Navigation extends Component {
               <div className="navbar-circle" style={{marginLeft : progress }}></div>
             </div>
             <img className="navbar-moon" src={require("../assets/moon.png")} alt="Moon" />
-            <div className="navbar-meter-text">({this.props.totalMiles} of 238900 miles)</div>
-          </Nav>
-          
-            {this.props.loggedIn ? (
-              <Nav pullRight className="extra-pull">
-              <NavItem>Logout</NavItem>
-              </Nav>
-            ) : (
-              <Nav pullRight className="extra-pull">
-              <NavItem eventKey={1} onSelect={this.loginShow}>
-              Login
-            </NavItem>
-            <Modal show={this.state.logShow} onHide={this.loginClose} >
-              <Modal.Header closeButton className="transparent">
-                <Modal.Title className="login-header">LOGIN</Modal.Title>
-              </Modal.Header>
-              <Modal.Body className="login-background">
-                <Login handleLogin={this.handleLogin} />
-              </Modal.Body>
-            </Modal>
-            <NavItem eventKey={2} onSelect={this.registerShow}>
-              Register
-            </NavItem>
-            <Modal show={this.state.regShow} onHide={this.registerClose}>
-              <Modal.Header closeButton className="transparent">
-                <Modal.Title className="login-header">Register</Modal.Title>
-              </Modal.Header>
-              <Modal.Body className="login-background">
-                <Register />
-              </Modal.Body>
-            </Modal>
-            </Nav>
-            
-            )}
-            
-          
+            <div className="navbar-meter-text">(0 of 238900 miles)</div>
+          </Nav>   
         </Navbar.Collapse>
       </Navbar>
     );

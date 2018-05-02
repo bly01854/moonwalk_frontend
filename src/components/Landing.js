@@ -2,9 +2,6 @@ import React, { Component } from "react";
 
 import { Grid, Row, Col } from "react-bootstrap";
 
-import Bar from "./Bar";
-import UserInput from "./UserInput";
-
 const FontAwesome = require('react-fontawesome');
 
 
@@ -26,48 +23,44 @@ class Landing extends Component {
         <Row className="show-grid">
           <Col xsHidden smHidden md={3} lg={3} className="landing-side-pane">
             <Col md={12}>
-            <div className="graph-container">
-              <div className = "graph-column">
-                  <div className = "graph-item">WALKING</div>
-                  <div className = "graph-item">RUNNING</div>
-                  <div className = "graph-item">CYCLING</div>
-              </div>
-            </div>
-            <div className="graph-container">
-              <div className="graph-column">
-                  <Bar width = {calculateBarWidth(this.props.walkingMiles)} />
-                  <Bar width = {calculateBarWidth(this.props.runningMiles)} />
-                  <Bar width = {calculateBarWidth(this.props.cyclingMiles)} />
-              </div>
-            </div>
+
             </Col>
           </Col>
           <Col md={6} lg={6} className="text-center transparent">
             <Row>
-              <h1 className="font-mission">MISSION</h1>
-              <h1 className="font-to-the">TO THE</h1>
-              <img className="logo" src={require("../assets/logo.png")} alt="Mission to the Moon" />
-              <h1 className="font-get-moving">LET'S GET MOVING!</h1>
-              <Row className="media-row">
-              <a href="https://www.facebook.com/christiancountyhd"><FontAwesome name="facebook" inverse="true" size="3x" className="social-media-row" /></a>
-              <a href="https://www.youtube.com/channel/UCsvhA-y0CtaeP1Lma5tlGcA"><FontAwesome name="youtube" inverse="true" size="3x" className="social-media-row" /></a>
-              </Row>
-              
+              <div className="title-container">
+                <img className="logo" src={require("../assets/MTM-logo.png")} alt="Mission to the Moon"/>
+                <span className="sub-titles">
+                  Welcome to <br/>
+                  <b>missiontothemoon.net</b>!
+                </span>
+                <span className="sub-titles">
+                  Sign-ups begin on  <br/>
+                  <b>MAY 14th, 2018</b>!
+                </span>
+                <span className="sub-titles">
+                  Come back then and create your  <br/>
+                  <b>FREE</b> account!
+                </span>
+
+                <div className="title-divider"></div>
+
+                <h4 className="sub-titles">What is the Mission?</h4>
+                <p className="sub-content">Our mission is to have our community as a whole travel 240,000 miles (the distance from the surface of Earth to the moon) by walking, running, cycling, jogging, skating, or whatever physical activity you would like to do! Create your account on May 14th and begin tracking your mileage! Community mileage will be displayed at the top of the missiontothemoon.net homepage so that you can see our progress! Every little bit counts, so Christian County...</p>
+                <h1 class="font-get-moving">LET'S GET MOVING!</h1>
+
+                <Row className="media-row">
+                  <a href="https://www.facebook.com/christiancountyhd"><FontAwesome name="facebook" inverse="true" size="3x" className="social-media-row" /></a>
+                  <a href="https://www.youtube.com/channel/UCsvhA-y0CtaeP1Lma5tlGcA"><FontAwesome name="youtube" inverse="true" size="3x" className="social-media-row" /></a>
+                </Row>
+              </div>
             </Row>
           </Col>
           <Col md={3} lg={3}>
-            {this.props.loggedIn == true && 
-            <UserInput/>}
+
           </Col>
         </Row>
-        <Row className="show-grid">
-          <Col className="text-center blue-bar">
-            <Row>
-              What is the <i>MISSION</i>?
-            </Row>
-          </Col>
-        </Row>
-        <Row className="show-grid bottom-border">
+        <Row className="show-grid bottom-border top-border">
           <Col xsHidden sm={6} md={6} lg={6} className="text-center black-background mission-col flex-center content-right">
             <Row>
               <img className="mission-image image-right" src={require("../assets/earth-to-moon-mileage.png")} alt="Mission to the Moon" />
