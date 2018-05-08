@@ -17,6 +17,7 @@ class Navigation extends Component {
     this.registerClose = this.registerClose.bind(this);
 
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
 
     this.state = {
       logShow: false,
@@ -26,6 +27,10 @@ class Navigation extends Component {
 
   handleLogin(status, id) {
     this.props.onLoginChange(status, id);
+  }
+
+  handleLogout(status) {
+    this.props.handleLogout(status);
   }
 
   loginShow() {
@@ -78,7 +83,7 @@ class Navigation extends Component {
           
             {this.props.loggedIn ? (
               <Nav pullRight className="extra-pull">
-              <NavItem>Logout</NavItem>
+              <NavItem onSelect={this.handleLogout}>Logout</NavItem>
               </Nav>
             ) : (
               <Nav pullRight className="extra-pull">

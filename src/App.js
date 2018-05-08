@@ -21,6 +21,7 @@ class App extends Component {
     };
 
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout= this.handleLogout.bind(this);
   }
   componentDidMount() {
     this.gatherMiles();
@@ -35,12 +36,15 @@ class App extends Component {
   handleLogin(status, Id) {
     this.setState({ loggedIn: status, userId: Id})
   }
+  handleLogout(status) {
+    this.setState({ loggedIn: status })
+  }
 
   render() {
     return (
       <div className="App">
         <div className="background"></div>
-        <Navigation loggedIn={this.state.loggedIn} totalMiles={this.state.totalMiles} onLoginChange={this.handleLogin} />
+        <Navigation loggedIn={this.state.loggedIn} totalMiles={this.state.totalMiles} onLoginChange={this.handleLogin} handleLogout={this.handleLogout} />
         <Landing loggedIn={this.state.loggedIn} walkingMiles={this.state.walkingMiles} runningMiles={this.state.runningMiles} cyclingMiles={this.state.cyclingMiles}/>
       </div>
     );
