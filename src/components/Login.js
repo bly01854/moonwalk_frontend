@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 import $ from "jquery";
+var vex = require('vex-js')
+vex.defaultOptions.className = 'vex-theme-os'
+
 
 class Login extends Component {
   constructor(props) {
@@ -14,7 +17,13 @@ class Login extends Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.loginUser = this.loginUser.bind(this);
+    this.sendLoginStateUp = this.sendLoginStateUp.bind(this);
 
+  }
+
+  sendLoginStateUp(status, userId){
+    console.log("calling")
+    this.props.handleLogin(status, userId);
   }
 
   handleEmailChange(e) {
@@ -26,15 +35,34 @@ class Login extends Component {
   }
 
   loginUser(e) {
-    const url = "https://moonwalk-dev.herokuapp.com/auth/";
+    const url = "https://moonwalk-dev.herokuapp.com/auth/login";
     let userId;
+    let success;
     e.preventDefault();
 
-    $.post(url + "login", {email: this.state.email, password: this.state.password}, function(data, textStatus) {
+    /*$.post(url + "login", {email: this.state.email, password: this.state.password}, function(data, textStatus) {
       userId = data.user.id;
-    }, "json");
+    }, "json"); */
 
-    this.props.handleLogin(true, userId);
+
+      $.ajax(url, {
+        context: this,
+        type: "POST",
+        data: {email: this.state.email, password: this.state.password},
+        dataType: "json",
+        success: function(data) {
+          userId = data.user.id;
+          success = true;
+          console.log("success");
+          this.sendLoginStateUp(true, userId);
+          
+        },
+        error: function() {
+          success = false;
+        },
+      });
+      
+
   }
 
   render() {

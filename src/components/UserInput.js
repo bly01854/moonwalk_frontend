@@ -7,7 +7,7 @@ class UserInput extends Component {
         <h2 className="user-input-header">Log Your Miles</h2>
         <p className="user-input-label" type="Distance:">
           <input type="number"
-            className="user-input-input"
+            className="user-input-input" min="0" max="50"
           />
         </p>
         <p className="user-input-label" type="Method:">

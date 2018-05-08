@@ -101,7 +101,7 @@ class Navigation extends Component {
                 <Modal.Title className="login-header">Register</Modal.Title>
               </Modal.Header>
               <Modal.Body className="login-background">
-                <Register />
+                <Register registerClose={this.registerClose} />
               </Modal.Body>
             </Modal>
             </Nav>

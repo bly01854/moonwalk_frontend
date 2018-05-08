@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 import $ from "jquery";
+var vex = require('vex-js')
+vex.registerPlugin(require('vex-dialog'))
+vex.defaultOptions.className = 'vex-theme-flat-attack';
 
 class Register extends Component {
   constructor(props) {
@@ -25,7 +28,11 @@ class Register extends Component {
     this.handleBirthDateChange = this.handleBirthDateChange.bind(this);
     this.handleGenderChange = this.handleGenderChange.bind(this);
 
-    this.loginUser = this.loginUser.bind(this);
+    this.registerUser = this.registerUser.bind(this);
+  }
+
+  registerClose() {
+    this.props.registerClose();
   }
 
   handleNameChange(e) {
@@ -50,7 +57,7 @@ class Register extends Component {
     this.setState({gender: e.target.value});
   }
 
-  loginUser(e) {
+  registerUser(e) {
     const url = "https://moonwalk-dev.herokuapp.com/auth/register";
     e.preventDefault();
 
@@ -63,10 +70,23 @@ class Register extends Component {
       gender: this.state.gender,
       preferredMeasure: this.state.preferredMeasure
     }
-
-    $.post(url, postData, function(result){
-
-    } )
+    $.ajax(url, {
+      context: this,
+      type: "POST",
+      data: postData,
+      dataType: "json",
+      success: function(data) {
+        console.log("success");
+        vex.dialog.alert({
+          message: "Registered Successfully, now login and get moving!",
+          
+        });
+        this.registerClose();
+      },
+      error: function() {
+      },
+      
+    });
   }
 
   render() {
@@ -135,7 +155,7 @@ class Register extends Component {
             <option value="21">Carroll County</option>
             <option value="22">Carter County</option>
             <option value="23">Casey County</option>
-            <option value="24">Christian County</option>
+            <option value="24" selected="selected">Christian County</option>
             <option value="25">Clark County</option>
             <option value="26">Clay County</option>
             <option value="27">Clinton County</option>

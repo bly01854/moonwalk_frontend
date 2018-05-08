@@ -11,6 +11,8 @@ import 'font-awesome/css/font-awesome.css';
 // Other CSS imports below:
 import './index.css';
 import './input-form.css';
+import 'vex-js/dist/css/vex.css';
+import 'vex-js/dist/css/vex-theme-flat-attack.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
