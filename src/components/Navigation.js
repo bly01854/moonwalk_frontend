@@ -5,6 +5,7 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Modal } from "react-bootst
 
 import Login from "./Login";
 import Register from "./Register";
+import AuthService from "./AuthService";
 
 class Navigation extends Component {
   constructor(props, context) {
@@ -18,6 +19,9 @@ class Navigation extends Component {
 
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.update = this.update.bind(this);
+
+    this.Auth = new AuthService();
 
     this.state = {
       logShow: false,
@@ -25,12 +29,14 @@ class Navigation extends Component {
     };
   }
 
-  handleLogin(status, id) {
-    this.props.onLoginChange(status, id);
+  handleLogin(status) {
+    this.props.onLoginChange(status);
   }
 
-  handleLogout(status) {
-    this.props.handleLogout(status);
+  handleLogout() {
+    this.Auth.logout();
+    this.setState({ logShow: false })
+    this.props.onLoginChange(false)
   }
 
   loginShow() {
@@ -83,6 +89,10 @@ class Navigation extends Component {
           
             {this.props.loggedIn ? (
               <Nav pullRight className="extra-pull">
+              {this.props.admin &&
+                <NavItem>
+                  Admin
+                </NavItem>}
               <NavItem onSelect={this.handleLogout}>Logout</NavItem>
               </Nav>
             ) : (
@@ -95,7 +105,7 @@ class Navigation extends Component {
                 <Modal.Title className="login-header">LOGIN</Modal.Title>
               </Modal.Header>
               <Modal.Body className="login-background">
-                <Login handleLogin={this.handleLogin} />
+                <Login handleLogin={this.handleLogin} update={this.update} />
               </Modal.Body>
             </Modal>
             <NavItem eventKey={2} onSelect={this.registerShow}>
@@ -117,6 +127,10 @@ class Navigation extends Component {
         </Navbar.Collapse>
       </Navbar>
     );
+  }
+
+  update() {
+    this.props.update();
   }
 }
 

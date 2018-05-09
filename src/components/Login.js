@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 import $ from "jquery";
+
+import AuthService from './AuthService';
+
 var vex = require('vex-js')
 vex.defaultOptions.className = 'vex-theme-os'
 
@@ -19,11 +22,13 @@ class Login extends Component {
     this.loginUser = this.loginUser.bind(this);
     this.sendLoginStateUp = this.sendLoginStateUp.bind(this);
 
+    this.Auth = new AuthService();
+
   }
 
-  sendLoginStateUp(status, userId){
+  sendLoginStateUp(status){
     console.log("calling")
-    this.props.handleLogin(status, userId);
+    this.props.handleLogin(status);
   }
 
   handleEmailChange(e) {
@@ -35,17 +40,16 @@ class Login extends Component {
   }
 
   loginUser(e) {
-    const url = "https://moonwalk-dev.herokuapp.com/auth/login";
-    let userId;
-    let success;
     e.preventDefault();
 
-    /*$.post(url + "login", {email: this.state.email, password: this.state.password}, function(data, textStatus) {
-      userId = data.user.id;
-    }, "json"); */
-
-
-      $.ajax(url, {
+    this.Auth.login(this.state.email, this.state.password)
+      .then(
+        this.sendLoginStateUp(true)
+      )
+      .catch(err => {
+        alert(err);
+      })
+      /*$.ajax(url, {
         context: this,
         type: "POST",
         data: {email: this.state.email, password: this.state.password},
@@ -60,9 +64,7 @@ class Login extends Component {
         error: function() {
           success = false;
         },
-      });
-      
-
+      }); */
   }
 
   render() {
