@@ -31,12 +31,13 @@ class App extends Component {
   componentWillMount() {
     if(this.Auth.loggedIn()){
       this.setState({ loggedIn: true})
+      if(this.Auth.getProfile().admin) {
+        this.setState({ admin: true })
+      }
     } else {
       this.setState({ loggedIn: false})
     }
-    if(this.Auth.getProfile().admin) {
-      this.setState({ admin: true })
-    }
+    
   }
 
   componentDidMount() {

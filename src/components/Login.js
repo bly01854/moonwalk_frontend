@@ -43,8 +43,9 @@ class Login extends Component {
     e.preventDefault();
 
     this.Auth.login(this.state.email, this.state.password)
-      .then(
-        this.sendLoginStateUp(true)
+      .then(() => {
+        this.sendLoginStateUp(this.Auth.loggedIn())
+      }
       )
       .catch(err => {
         alert(err);
