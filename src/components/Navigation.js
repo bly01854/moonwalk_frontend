@@ -35,7 +35,7 @@ class Navigation extends Component {
             <img className="navbar-earth" src={require("../assets/earth.png")} alt="Earth" />
             <div className="navbar-line-container">
               <div className="navbar-line"></div>
-              <div className="navbar-circle" style={{marginLeft : progress }}></div>
+              <div className="navbar-circle" style={{marginLeft : 0 }}></div>
             </div>
             <img className="navbar-moon" src={require("../assets/moon.png")} alt="Moon" />
             <div className="navbar-meter-text">(0 of 238900 miles)</div>

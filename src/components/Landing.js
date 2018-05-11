@@ -46,8 +46,7 @@ class Landing extends Component {
                 <div className="title-divider"></div>
 
                 <h4 className="sub-titles">What is the Mission?</h4>
-                <p className="sub-content">Our mission is to have our community as a whole travel 240,000 miles (the distance from the surface of Earth to the moon) by walking, running, cycling, jogging, skating, or whatever physical activity you would like to do! Create your account on May 14th and begin tracking your mileage! Community mileage will be displayed at the top of the missiontothemoon.net homepage so that you can see our progress! Every little bit counts, so Christian County...</p>
-                <h1 class="font-get-moving">LET'S GET MOVING!</h1>
+                <p className="sub-content">Our mission is to have our community as a whole travel 240,000 miles (the distance from the surface of Earth to the moon) by walking, running, cycling, jogging, skating, or whatever physical activity you would like to do! Create your account on May 14th and begin tracking your mileage! Community mileage will be displayed at the top of the missiontothemoon.net homepage so that you can see our progress! Every little bit counts, so get moving Christian County!</p>
 
                 <Row className="media-row">
                   <a href="https://www.facebook.com/christiancountyhd"><FontAwesome name="facebook" inverse="true" size="3x" className="social-media-row" /></a>
