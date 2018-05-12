@@ -26,9 +26,9 @@ class Login extends Component {
 
   }
 
-  sendLoginStateUp(status){
+  sendLoginStateUp(status, admin){
     console.log("calling")
-    this.props.handleLogin(status);
+    this.props.handleLogin(status, admin);
   }
 
   handleEmailChange(e) {
@@ -44,7 +44,7 @@ class Login extends Component {
 
     this.Auth.login(this.state.email, this.state.password)
       .then(() => {
-        this.sendLoginStateUp(this.Auth.loggedIn())
+        this.sendLoginStateUp(this.Auth.loggedIn(), this.Auth.getProfile().admin)
       }
       )
       .catch(err => {

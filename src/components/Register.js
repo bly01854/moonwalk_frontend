@@ -132,36 +132,36 @@ class Register extends Component {
         </p>
         <p className="user-input-label" type="County:">
             <select className="user-input-input" onChange={this.handleCountyChange}>
-            <option value="1">Adair County</option>
-            <option value="2">Allen County</option>
-            <option value="3">Anderson County</option>
-            <option value="4">Ballard County</option>
-            <option value="5">Barren County</option>
-            <option value="6">Bath County</option>
-            <option value="7">Bell County</option>
-            <option value="8">Boone County</option>
-            <option value="9">Bourbon County</option>
-            <option value="10">Boyd County</option>
-            <option value="11">Boyle County</option>
-            <option value="12">Bracken County</option>
-            <option value="13">Breathitt County</option>
-            <option value="14">Breckinridge County</option>
-            <option value="15">Bullitt County</option>
-            <option value="16">Butler County</option>
-            <option value="17">Caldwell County</option>
-            <option value="18">Calloway County</option>
-            <option value="19">Campbell County</option>
-            <option value="20">Carlisle County</option>
-            <option value="21">Carroll County</option>
-            <option value="22">Carter County</option>
-            <option value="23">Casey County</option>
-            <option value="24" selected="selected">Christian County</option>
-            <option value="25">Clark County</option>
-            <option value="26">Clay County</option>
-            <option value="27">Clinton County</option>
-            <option value="28">Crittenden County</option>
-            <option value="29">Cumberland County</option>
-            <option value="30">Daviess County</option>
+            <option value="Adair">Adair County</option>
+            <option value="Allen">Allen County</option>
+            <option value="Anderson">Anderson County</option>
+            <option value="Ballard">Ballard County</option>
+            <option value="Barren">Barren County</option>
+            <option value="Bath">Bath County</option>
+            <option value="Bell">Bell County</option>
+            <option value="Boone">Boone County</option>
+            <option value="Bourbon">Bourbon County</option>
+            <option value="Boyd">Boyd County</option>
+            <option value="Boyle">Boyle County</option>
+            <option value="Bracken">Bracken County</option>
+            <option value="Breathitt">Breathitt County</option>
+            <option value="Breckinridge">Breckinridge County</option>
+            <option value="Bullitt">Bullitt County</option>
+            <option value="Butler">Butler County</option>
+            <option value="Caldwell">Caldwell County</option>
+            <option value="Calloway">Calloway County</option>
+            <option value="Campbell">Campbell County</option>
+            <option value="Carlisle">Carlisle County</option>
+            <option value="Carroll">Carroll County</option>
+            <option value="Carter">Carter County</option>
+            <option value="Casey">Casey County</option>
+            <option value="Christian" selected="selected">Christian County</option>
+            <option value="Clark">Clark County</option>
+            <option value="Clay">Clay County</option>
+            <option value="Clinton">Clinton County</option>
+            <option value="Crittenden">Crittenden County</option>
+            <option value="Cumberland">Cumberland County</option>
+            <option value="Daviess">Daviess County</option>
             <option value="31">Edmonson County</option>
             <option value="32">Elliott County</option>
             <option value="33">Estill County</option>

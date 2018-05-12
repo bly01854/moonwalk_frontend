@@ -34,6 +34,20 @@ export default class AuthService {
         })
     }
 
+    getAllUsers() {
+        return this.fetch(`${this.domain}/api/admin/user`, {
+            method: 'GET'
+        }).then(data => {
+            return data;
+        })
+    }
+
+    deleteUser(userId) {
+        return this.fetch(`${this.domain}/api/user/${userId}`, {
+            method: 'DELETE'
+        })
+    }
+
     loggedIn() {
         //Checks if there is a saved token and if it is still valid
         const token = this.getToken() // Get token from local storage

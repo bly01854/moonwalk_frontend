@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 
 // Bootstrap
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Modal } from "react-bootstrap";
@@ -29,8 +30,8 @@ class Navigation extends Component {
     };
   }
 
-  handleLogin(status) {
-    this.props.onLoginChange(status);
+  handleLogin(status, admin) {
+    this.props.onLoginChange(status, admin);
   }
 
   handleLogout() {
@@ -91,7 +92,7 @@ class Navigation extends Component {
               <Nav pullRight className="extra-pull">
               {this.props.admin &&
                 <NavItem>
-                  Admin
+                  <Link to="/admin">Admin</Link>
                 </NavItem>}
               <NavItem onSelect={this.handleLogout}>Logout</NavItem>
               </Nav>

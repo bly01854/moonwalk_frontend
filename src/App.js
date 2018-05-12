@@ -33,6 +33,8 @@ class App extends Component {
       this.setState({ loggedIn: true})
       if(this.Auth.getProfile().admin) {
         this.setState({ admin: true })
+      } else {
+        this.setState({ admin: false})
       }
     } else {
       this.setState({ loggedIn: false})
@@ -50,8 +52,8 @@ class App extends Component {
       runningMiles: data.totalByCategory[1].distance, cyclingMiles: data.totalByCategory[2].distance }));
   }
 
-  handleLogin(status) {
-    this.setState({ loggedIn: status})
+  handleLogin(status, admin) {
+    this.setState({ loggedIn: status, admin: admin})
   }
   handleLogout(status) {
     this.setState({ loggedIn: status })
