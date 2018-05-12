@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import Admin from './components/Admin'
 import registerServiceWorker from './registerServiceWorker';
 import {HashRouter, Route } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ import 'vex-js/dist/css/vex-theme-flat-attack.css';
 ReactDOM.render((
     <HashRouter>
         <Route exact path="/" component={App}/>
+        <Route exact path="/admin" component={Admin}/>
     </HashRouter>
 ), document.getElementById('root'));
 registerServiceWorker();

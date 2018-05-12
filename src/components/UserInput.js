@@ -52,6 +52,7 @@ class UserInput extends Component {
               <option className="user-input-option" value="R">Run</option>
               <option className="user-input-option" value="W">Walk</option>
               <option className="user-input-option" value="C">Bike</option>
+              <option className="user-input-option" value="O">Other</option>
           </select>
             
         </p>
