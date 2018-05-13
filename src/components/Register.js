@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Alert} from "react-bootstrap";
 
 import $ from "jquery";
 var vex = require('vex-js')
@@ -14,10 +15,11 @@ class Register extends Component {
       email: "",
       password: "",
       confirmPassword: "",
-      county: "",
+      county: "Christian",
       birthDate: "",
-      gender: "",
-      preferredMeasure: "MI"
+      gender: "M",
+      preferredMeasure: "MI",
+      passwordMatch: true,
     });
 
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -61,6 +63,10 @@ class Register extends Component {
     const url = "https://moonwalk-dev.herokuapp.com/auth/register";
     e.preventDefault();
 
+    if(this.state.password !== this.state.confirmPassword){
+      this.setState({passwordMatch: false})
+    } else {
+
     const postData = {
       name: this.state.name,
       email: this.state.email,
@@ -87,39 +93,40 @@ class Register extends Component {
       },
       
     });
-  }
+  } }
 
   render() {
     return (
       <form>
+        {!this.state.passwordMatch && <Alert bsStyle="warning">Passwords do not match!</Alert>}
         <p className="user-input-label" type="Email:">
           <input type="text"
             className="user-input-input"
             value={this.state.email}
-            onChange={this.handleEmailChange}
+            onChange={this.handleEmailChange} required
           />
         </p>
         <p className="user-input-label" type="Password:">
         <input type="password"
             className="user-input-input"
             value={this.state.password}
-            onChange={this.handlePasswordChange}
+            onChange={this.handlePasswordChange} required
           />
         </p>
         <p className="user-input-label" type="Confirm Password:">
         <input type="password"
             className="user-input-input"
             value={this.state.confirmPassword}
-            onChange={this.handleConfirmPasswordChange}
+            onChange={this.handleConfirmPasswordChange} required
           />
         </p>
         <p className="user-input-label" type="Name:">
             <input type="text" className="user-input-input"
             value={this.state.name}
-            onChange={this.handleNameChange} />
+            onChange={this.handleNameChange} required />
         </p>
         <p className="user-input-label" type="Gender:">
-            <select className="user-input-input" onChange={this.handleGenderChange}>
+            <select className="user-input-input" onChange={this.handleGenderChange} required>
                 <option className="user-input-option" value="M">Male</option>
                 <option className="user-input-option" value="F">Female</option>
                 <option className="user-input-option" value="O">Other / Do not wish to specify</option>
@@ -128,10 +135,10 @@ class Register extends Component {
         <p className="user-input-label" type="Date of Birth:">
             <input type="date" className="user-input-input"
             value={this.state.birthDate}
-            onChange={this.handleBirthDateChange} />
+            onChange={this.handleBirthDateChange} required/>
         </p>
         <p className="user-input-label" type="County:">
-            <select className="user-input-input" onChange={this.handleCountyChange}>
+            <select className="user-input-input" onChange={this.handleCountyChange} required>
             <option value="Adair">Adair County</option>
             <option value="Allen">Allen County</option>
             <option value="Anderson">Anderson County</option>

@@ -15,10 +15,7 @@ class App extends Component {
       loggedIn : false,
       admin : false,
       userId: 0,
-      walkingMiles: 0,
-      runningMiles: 0,
-      cyclingMiles: 0,
-      otherMiles: 0,
+      milesData: [],
       totalMiles: 0,
     };
 
@@ -48,8 +45,7 @@ class App extends Component {
 
   gatherMiles() {
     $.getJSON('https://moonwalk-dev.herokuapp.com/api/exercise/totals')
-    .then(({ data }) => this.setState({ totalMiles: data.total, walkingMiles: data.totalByCategory[0].distance, 
-      runningMiles: data.totalByCategory[1].distance, cyclingMiles: data.totalByCategory[2].distance }));
+    .then(({ data }) =>  this.setState({ totalMiles: data.total, milesData: data.totalByCategory }));
   }
 
   handleLogin(status, admin) {
@@ -66,8 +62,7 @@ class App extends Component {
         <Navigation loggedIn={this.state.loggedIn} totalMiles={this.state.totalMiles} 
         onLoginChange={this.handleLogin} handleLogout={this.handleLogout} 
         update={this.update} admin={this.state.admin} />
-        <Landing loggedIn={this.state.loggedIn} walkingMiles={this.state.walkingMiles} 
-        runningMiles={this.state.runningMiles} cyclingMiles={this.state.cyclingMiles}/>
+        <Landing loggedIn={this.state.loggedIn} milesData={this.state.milesData}/>
       </div>
     );
   }

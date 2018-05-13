@@ -8,7 +8,7 @@ class UserInput extends Component {
 
     this.state = ({
       distance: 0,
-      method: ""
+      method: "R"
     })
 
     this.handleDistanceChange = this.handleDistanceChange.bind(this)
@@ -44,11 +44,11 @@ class UserInput extends Component {
         <p className="user-input-label" type="Distance:">
           <input type="number" onChange={this.handleDistanceChange}
             className="user-input-input" min="0" max="50"
-            value={this.state.distance}
+            value={this.state.distance} required
           />
         </p>
         <p className="user-input-label" type="Method:">
-          <select className="user-input-input" onChange={this.handleMethodChange}>
+          <select className="user-input-input" onChange={this.handleMethodChange} required>
               <option className="user-input-option" value="R">Run</option>
               <option className="user-input-option" value="W">Walk</option>
               <option className="user-input-option" value="C">Bike</option>

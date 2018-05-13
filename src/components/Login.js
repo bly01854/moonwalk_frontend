@@ -77,6 +77,7 @@ class Login extends Component {
             className="user-input-input"
             value={this.state.email}
             onChange={this.handleEmailChange}
+            required
           />
         </p>
         <p className="user-input-label" type="Password:">
@@ -84,7 +85,7 @@ class Login extends Component {
             className="user-input-input"
             value={this.state.password}
             onChange={this.handlePasswordChange}
-            
+            required
           />
         </p>
         <button className="user-input-button" onClick={this.loginUser}>Login</button>
