@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import {PageHeader} from 'react-bootstrap';
 import '../../node_modules/react-bootstrap-table/css/react-bootstrap-table.css';
 
 import AuthService from './AuthService';
@@ -28,6 +29,7 @@ class UsersTable extends Component{
     render() {
         return (
             <div>
+                <PageHeader>Users Table</PageHeader>
                 <BootstrapTable data={this.state.data}
                  pagination={true}
                  selectRow={{mode: 'checkbox'}}
