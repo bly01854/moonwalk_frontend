@@ -385,6 +385,10 @@ body {
   margin: 0 auto;
 }
 
+.center-column {
+  padding: 0 20px;
+}
+
 @media (max-width: 576px) { 
   .ease-col{
     height: auto;
