@@ -132,7 +132,7 @@ body {
   width: 100%;
   padding-top: 10px;
   min-height: 100vh;
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 .navbar-custom {
@@ -151,7 +151,6 @@ body {
   font: 'Lulo Clean';
   font-weight: 900;
   letter-spacing: 0;
-  margin-top:50px;
 }
 .font-mission {
   color: #fff;
@@ -369,6 +368,7 @@ body {
 .image-right {
   position: absolute;
   right: 0;
+  top: 0;
 }
 
 @media (max-width: 576px) { 

@@ -20,11 +20,9 @@ class Landing extends Component {
           </Col>
           <Col md={6} lg={6} className="text-center transparent">
             <Row>
-              <h1 className="font-mission">MISSION</h1>
-              <h1 className="font-to-the">TO THE</h1>
               <img
                 className="logo"
-                src={require("../assets/logo.png")}
+                src={require("../assets/MTM-logo.png")}
                 alt="Mission to the Moon"
               />
               <h1 className="font-get-moving">LET'S GET MOVING!</h1>
