@@ -66,7 +66,7 @@ class StatsBar extends Component {
         <XAxis type="number" tick={{ fill: "#fff" }} />
         <YAxis dataKey="method" type="category" tick={{ fill: "#fff" }} />
         <Tooltip />
-        <Bar dataKey="distance" fill="#7aa4e8" height={30} />
+        <Bar dataKey="distance" fill="#7aa4e8"/>
       </BarChart>
     );
   }
