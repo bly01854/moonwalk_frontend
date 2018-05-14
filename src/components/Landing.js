@@ -22,6 +22,15 @@ class Landing extends Component {
             <Row className="no-margin">
               <StatsBar milesData={this.props.milesData} />
             </Row>
+            {this.props.loggedIn == true &&
+            <div>
+              <Row className="no-margin">
+                <span className="graph-title">Personal Stats:</span>
+              </Row>
+              <Row className="no-margin">
+                <StatsBar milesData={this.props.milesData} />
+              </Row>
+            </div>}
           </Col>
           <Col md={6} lg={6} className="text-center transparent">
             <Row>
