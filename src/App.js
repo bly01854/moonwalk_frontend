@@ -16,6 +16,7 @@ class App extends Component {
       admin : false,
       userId: 0,
       milesData: [],
+      userMilesData: [],
       totalMiles: 0,
     };
 

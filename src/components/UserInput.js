@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Alert} from 'react-bootstrap';
 
 import AuthService from './AuthService';
 var vex = require('vex-js');
@@ -10,7 +11,8 @@ class UserInput extends Component {
 
     this.state = ({
       distance: 0,
-      method: "R"
+      method: "R",
+      alert: false
     })
 
     this.handleDistanceChange = this.handleDistanceChange.bind(this)
@@ -77,7 +79,7 @@ class UserInput extends Component {
         })
       })
       .catch(err => {
-        console.log(err);
+        this.setState({alert: true});
       })   
   }
 
@@ -86,9 +88,10 @@ class UserInput extends Component {
     return (
       <form className="user-input-form">
         <h2 className="user-input-header">Log Your Miles</h2>
+        {this.state.alert && <Alert bsStyle="warning">Miles out of Bounds!</Alert>}
         <p className="user-input-label" type="Distance:">
           <input type="number" onChange={this.handleDistanceChange}
-            className="user-input-input" min="0" max="50"
+            className="user-input-input" min="1" max="50"
             value={this.state.distance} required
           />
         </p>

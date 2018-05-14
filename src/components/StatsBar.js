@@ -6,33 +6,54 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
+  Legend
 } from "recharts";
 
 class StatsBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        data: []
-    }
+      data: []
+    };
   }
 
-  componentDidMount() {
-    console.log(this.props.milesData)
-  }
+  componentDidMount() {}
 
   render() {
-
-    if(this.state.data.length<1){
-    if(this.props.milesData.length > 0){
-        console.log(this.props.milesData)
-        this.setState({data: [
-            {method: "Walking", distance: this.props.milesData[1].distance},
-            {method: "Running", distance: this.props.milesData[2].distance},
-            {method: "Cycling", distance: this.props.milesData[3].distance},
-            {method: "Other", distance: this.props.milesData[4].distance},
-        ]})
-    }}
+    if (this.state.data.length < 1) {
+      if (this.props.milesData.length > 0) {
+        var tempData = [];
+        for (var i = 0; i < this.props.milesData.length; i++) {
+          if (this.props.milesData[i].method == "W") {
+            tempData[i] = {
+              method: "Walking",
+              distance: this.props.milesData[i].distance
+            };
+          } else if (this.props.milesData[i].method == "R") {
+            tempData[i] = {
+              method: "Running",
+              distance: this.props.milesData[i].distance
+            };
+          } else if (this.props.milesData[i].method == "C") {
+            tempData[i] = {
+              method: "Cycling",
+              distance: this.props.milesData[i].distance
+            };
+          } else if (this.props.milesData[i].method == "O") {
+            tempData[i] = {
+              method: "Other",
+              distance: this.props.milesData[i].distance
+            } 
+          } else{
+            tempData[i] = {
+              method: "Unknown",
+              distance: this.props.milesData[i].distance
+            }
+          }
+        }
+        this.setState({ data: tempData });
+      }
+    }
 
     return (
       <BarChart
@@ -42,15 +63,13 @@ class StatsBar extends Component {
         layout="vertical"
         margin={{ top: 5, right: 30, bottom: 5 }}
       >
-      <XAxis type="number" tick={{fill: "#fff" }}/>
-      <YAxis dataKey="method" type="category" tick={{fill: "#fff" }}/>
+        <XAxis type="number" tick={{ fill: "#fff" }} />
+        <YAxis dataKey="method" type="category" tick={{ fill: "#fff" }} />
         <Tooltip />
-        <Bar dataKey="distance" fill="#7aa4e8" height="30"/>
+        <Bar dataKey="distance" fill="#7aa4e8" height={30} />
       </BarChart>
     );
   }
 }
-
-
 
 export default StatsBar;

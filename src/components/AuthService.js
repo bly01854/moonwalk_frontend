@@ -50,6 +50,14 @@ export default class AuthService {
         })
     }
 
+    getUserExercise(userId) {
+        return this.fetch(`${this.domain}/api/exercise/totals/${userId}`, {
+            method: 'GET'
+        }).then(data => {
+            return data;
+        })
+    }
+
     loggedIn() {
         //Checks if there is a saved token and if it is still valid
         const token = this.getToken() // Get token from local storage

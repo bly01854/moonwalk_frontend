@@ -4,14 +4,29 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import StatsBar from "./StatsBar";
 import UserInput from "./UserInput";
+import AuthService from "./AuthService";
 
 const FontAwesome = require("react-fontawesome");
 
 class Landing extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      userMiles: [],
+    }
+
+    this.Auth = new AuthService();
+  }
+
+  componentDidMount(){
+    if(this.Auth.loggedIn()){
+      this.Auth.getUserExercise(this.Auth.getProfile().id).then(data => {
+        this.setState({ userMiles: data.data.totalByCategory })
+      })
+    }
   }
   render() {
+
     return (
       <Grid className="remove-margin">
         <Row className="show-grid">
@@ -28,7 +43,7 @@ class Landing extends Component {
                 <span className="graph-title">Personal Stats:</span>
               </Row>
               <Row className="no-margin">
-                <StatsBar milesData={this.props.milesData} />
+                <StatsBar milesData={this.state.userMiles} />
               </Row>
             </div>}
           </Col>
