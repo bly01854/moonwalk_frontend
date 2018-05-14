@@ -16,7 +16,12 @@ class Landing extends Component {
       <Grid className="remove-margin">
         <Row className="show-grid">
           <Col xsHidden smHidden md={3} lg={3} className="landing-side-pane">
-            <StatsBar milesData={this.props.milesData} />
+            <Row className="no-margin">
+              <span className="graph-title">General Stats:</span>
+            </Row>
+            <Row className="no-margin">
+              <StatsBar milesData={this.props.milesData} />
+            </Row>
           </Col>
           <Col md={6} lg={6} className="text-center transparent">
             <Row>

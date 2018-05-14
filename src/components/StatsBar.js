@@ -45,7 +45,7 @@ class StatsBar extends Component {
       <XAxis type="number"/>
       <YAxis dataKey="method" type="category"/>
         <Tooltip />
-        <Bar dataKey="distance" fill="#8884d8" />
+        <Bar dataKey="distance" fill="#7aa4e8" />
       </BarChart>
     );
   }

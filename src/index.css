@@ -371,6 +371,20 @@ body {
   top: 0;
 }
 
+.no-margin {
+  margin: 0;
+}
+
+.graph-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.recharts-wrapper {
+  margin: 0 auto;
+}
+
 @media (max-width: 576px) { 
   .ease-col{
     height: auto;
