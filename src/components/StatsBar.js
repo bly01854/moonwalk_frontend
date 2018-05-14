@@ -38,14 +38,14 @@ class StatsBar extends Component {
       <BarChart
         data={this.state.data}
         width={300}
-        height={300}
+        height={200}
         layout="vertical"
         margin={{ top: 5, right: 30, bottom: 5 }}
       >
       <XAxis type="number"/>
       <YAxis dataKey="method" type="category"/>
         <Tooltip />
-        <Bar dataKey="distance" fill="#7aa4e8" />
+        <Bar dataKey="distance" fill="#7aa4e8" height="30"/>
       </BarChart>
     );
   }
