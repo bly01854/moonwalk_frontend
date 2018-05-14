@@ -65,7 +65,8 @@ body {
 
 .navbar-meter-text {
   color:#fff;
-  margin-top: -5px;
+  margin-top: -10px;
+  margin-bottom: 5px;
 }
 
 .navbar-circle {
