@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 import AuthService from './AuthService';
+var vex = require('vex-js');
+vex.defaultOptions.className = 'vex-theme-flat-attack';
 
 class UserInput extends Component {
   constructor(props) {
@@ -24,15 +26,58 @@ class UserInput extends Component {
     this.setState({ method: e.target.value })
   }
 
+  displaySuccess(methodId, distance) {
+    console.log("Added Distance");
+    var method;
+    switch (methodId) {
+      case 'R':
+        method ='running';
+        break;
+      case 'W':
+        method ='walking';
+        break;
+      case 'C':
+        method ='cycling';
+        break;
+      default:
+        method ='other';
+        break;
+    }
+    vex.dialog.alert({
+      message: "Successfully recorded "+distance+" miles of "+method,
+    })
+  }
+
   logDistance(e) {
     e.preventDefault();
 
     this.Auth.logDistance(this.Auth.getProfile().id, this.state.method, this.state.distance)
-      .then(
-        
-      )
+      .then(() => {
+        console.log("Added Distance");
+        var method;
+        switch (this.state.method) {
+          case 'R':
+            method ='running';
+            break;
+          case 'W':
+            method ='walking';
+            break;
+          case 'C':
+            method ='cycling';
+            break;
+          default:
+            method ='other';
+            break;
+        }
+        vex.dialog.alert({
+          message: "Successfully recorded "+this.state.distance+" miles of "+method,
+          callback: function() {
+            window.location.reload()
+          }
+        })
+      })
       .catch(err => {
-        alert(err);
+        console.log(err);
       })   
   }
 
