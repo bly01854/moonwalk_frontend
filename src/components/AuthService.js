@@ -45,6 +45,8 @@ export default class AuthService {
     deleteUser(userId) {
         return this.fetch(`${this.domain}/api/user/${userId}`, {
             method: 'DELETE'
+        }).then(res => {
+            console.log(res);
         })
     }
 

@@ -42,13 +42,15 @@ class StatsBar extends Component {
         layout="vertical"
         margin={{ top: 5, right: 30, bottom: 5 }}
       >
-      <XAxis type="number"/>
-      <YAxis dataKey="method" type="category"/>
+      <XAxis type="number" tick={{fill: "#fff" }}/>
+      <YAxis dataKey="method" type="category" tick={{fill: "#fff" }}/>
         <Tooltip />
         <Bar dataKey="distance" fill="#7aa4e8" />
       </BarChart>
     );
   }
 }
+
+
 
 export default StatsBar;
