@@ -33,7 +33,7 @@ class Landing extends Component {
             </div>}
           </Col>
           <Col md={6} lg={6} className="text-center transparent">
-            <Row>
+            <Row className="center-column">
               <img
                 className="logo"
                 src={require("../assets/MTM-logo.png")}
