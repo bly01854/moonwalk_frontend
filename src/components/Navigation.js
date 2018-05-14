@@ -63,8 +63,8 @@ class Navigation extends Component {
   render() {
 
     function progressCalculation(progress) {
-      let percentProgress = ((progress / 238900) * 0.75) * 100;
-      percentProgress = percentProgress + "vh";
+      let percentProgress = ((progress / 238900) * 100) * 0.5;
+      percentProgress = "calc("+percentProgress + "vw - 10px)";
       return percentProgress;
     }
 
