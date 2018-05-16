@@ -23,6 +23,8 @@ body {
   display: inline-block;
   float: none;
   vertical-align: top;
+  margin: 7.5px -15px;
+  margin-right: 20px;
 }
 
 .navbar .navbar-collapse {
@@ -143,7 +145,10 @@ body {
   border: 0;
   border-bottom: 1px solid dodgerblue;
   background-image: none;
+}
 
+.navbar-custom .container{
+  width: 100vw !important;
 }
 
 .font-get-moving {
@@ -152,6 +157,14 @@ body {
   font: 'Lulo Clean';
   font-weight: 900;
   letter-spacing: 0;
+}
+.font-scroll-down {
+  color: #fff;
+  font-size: 20px;
+  font: 'Lulo Clean';
+  font-weight: 600;
+  letter-spacing: 0;
+  padding: 0 20px;
 }
 .font-mission {
   color: #fff;
@@ -388,6 +401,24 @@ body {
 
 .center-column {
   padding: 0 20px;
+}
+
+.half-container {
+  display: inline-block;
+  width: 50%;  
+  vertical-align:top;
+}
+
+.shirt-img {
+  max-width: 100%;
+  max-height: 240px;
+  margin: 10px;
+}
+
+@media (max-width: 767px) {
+  .navbar-nav {
+    margin: 0 !important;
+  }
 }
 
 @media (max-width: 576px) { 

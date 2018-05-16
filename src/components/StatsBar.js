@@ -4,9 +4,7 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend
+  Tooltip
 } from "recharts";
 
 class StatsBar extends Component {
@@ -24,22 +22,22 @@ class StatsBar extends Component {
       if (this.props.milesData.length > 0) {
         var tempData = [];
         for (var i = 0; i < this.props.milesData.length; i++) {
-          if (this.props.milesData[i].method == "W") {
+          if (this.props.milesData[i].method === "W") {
             tempData[i] = {
               method: "Walking",
               distance: this.props.milesData[i].distance
             };
-          } else if (this.props.milesData[i].method == "R") {
+          } else if (this.props.milesData[i].method === "R") {
             tempData[i] = {
               method: "Running",
               distance: this.props.milesData[i].distance
             };
-          } else if (this.props.milesData[i].method == "C") {
+          } else if (this.props.milesData[i].method === "C") {
             tempData[i] = {
               method: "Cycling",
               distance: this.props.milesData[i].distance
             };
-          } else if (this.props.milesData[i].method == "O") {
+          } else if (this.props.milesData[i].method === "O") {
             tempData[i] = {
               method: "Other",
               distance: this.props.milesData[i].distance

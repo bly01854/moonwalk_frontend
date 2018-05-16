@@ -37,7 +37,7 @@ class Landing extends Component {
             <Row className="no-margin">
               <StatsBar milesData={this.props.milesData} />
             </Row>
-            {this.props.loggedIn == true &&
+            {this.props.loggedIn === true &&
             <div>
               <Row className="no-margin">
                 <span className="graph-title">Personal Stats:</span>
@@ -55,6 +55,7 @@ class Landing extends Component {
                 alt="Mission to the Moon"
               />
               <h1 className="font-get-moving">LET'S GET MOVING!</h1>
+              <h4 className="font-scroll-down">Scroll down and see how to get a FREE Mission to the Moon T-shirt!</h4>
               <Row className="media-row">
                 <a href="https://www.facebook.com/christiancountyhd">
                   <FontAwesome
@@ -76,7 +77,7 @@ class Landing extends Component {
             </Row>
           </Col>
           <Col md={3} lg={3}>
-            {this.props.loggedIn == true && <UserInput />}
+            {this.props.loggedIn === true && <UserInput />}
           </Col>
         </Row>
         <Row className="show-grid">
@@ -138,36 +139,37 @@ class Landing extends Component {
             <Row>
               <div className="ease-content-container">
                 <p>
-                  No matter if you need relief from arthritis pain or just want
-                  to be active, the Arthritis Foundation's six week, SELF-STUDY
-                  Walk With Ease program can teach you how to safely make
-                  physcal activity part of your everyday life.
+                  Download and complete a <a href="../assets/walk-with-ease-survey.pdf" download>Walk with Ease Preliminary Survey</a> and bring it to the Christian County Health Department for a <strong>FREE MISSION TO THE MOON T-SHIRT!</strong>
                 </p>
-                <span>
-                  Request a <u>FREE</u> Walk With Ease Self-Study Guidebook and:
-                </span>
-                <ul>
-                  <li>Develop awalking plan that will meet your needs.</li>
-                  <li>Stay motivated.</li>
-                  <li>Manage your plan.</li>
-                  <li>Learn to exercise safety</li>
-                </ul>
-                <span>Walk With Ease is proven to:</span>
-                <ul>
-                  <li>Reduce the pain and discomfort of arthritis.</li>
-                  <li>Increase balance, strength, and walking pace.</li>
-                  <li>
-                    Build confidence in your ability to be physically active.
-                  </li>
-                  <li>Improve overall health.</li>
-                </ul>
                 <p>
-                  Request your self-study guide via email at{" "}
-                  <a href="mailto:a.bassingthwaite@ky.gov" target="_top">
-                    a.bassingthwaite@ky.gov
-                  </a>{" "}
-                  or stop by the Christian County Department for your free copy!
+                  <center>
+                    (Limited Supply -- First Come, First Served!)
+                  </center>
                 </p>
+                <div className="half-container">
+                        <p>
+                          No matter if you need relief from arthritis pain or just want
+                          to be active, the Arthritis Foundation's six week, SELF-STUDY
+                          Walk With Ease program can teach you how to safely make
+                          physcal activity part of your everyday life.
+                        </p>
+                        <span>Walk With Ease is proven to:</span>
+                        <ul>
+                          <li>Reduce the pain and discomfort of arthritis.</li>
+                          <li>Increase balance, strength, and walking pace.</li>
+                          <li>
+                            Build confidence in your ability to be physically active.
+                          </li>
+                          <li>Improve overall health.</li>
+                        </ul>
+                </div>
+                <div className="half-container">
+                  <img
+                    className="shirt-img"
+                    src={require("../assets/mttm-shirt.png")}
+                    alt="Mission to the Moon T-Shirt"
+                  />
+                </div>
               </div>
 
               <a

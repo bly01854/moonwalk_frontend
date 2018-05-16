@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import $ from "jquery";
-
 import AuthService from './AuthService';
 
 var vex = require('vex-js')

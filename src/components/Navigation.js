@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom';
 
 // Bootstrap
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Modal } from "react-bootstrap";
+import { Navbar, Nav, NavItem, Modal } from "react-bootstrap";
 
 import Login from "./Login";
 import Register from "./Register";
