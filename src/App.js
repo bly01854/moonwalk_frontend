@@ -37,6 +37,8 @@ class App extends Component {
     } else {
       this.setState({ loggedIn: false})
     }
+
+    console.log(this.Auth.getProfile());
     
   }
 
