@@ -85,7 +85,7 @@ class Navigation extends Component {
               <div className="navbar-circle" style={{marginLeft : progress }}></div>
             </div>
             <img className="navbar-moon" src={require("../assets/moon.png")} alt="Moon" />
-            <div className="navbar-meter-text">({this.props.totalMiles} of 238900 miles)</div>
+            <div className="navbar-meter-text">({parseFloat(this.props.totalMiles).toFixed(0)} of 238900 miles)</div>
           </Nav>
           
             {this.props.loggedIn ? (
