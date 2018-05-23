@@ -29,7 +29,7 @@ class UsersTable extends Component{
     render() {
         return (
             <div>
-                <PageHeader>Users Table</PageHeader>
+                <PageHeader className="table-header">Users Table</PageHeader>
                 <BootstrapTable data={this.state.data}
                  pagination={true}
                  selectRow={{mode: 'checkbox'}}
@@ -37,13 +37,13 @@ class UsersTable extends Component{
                  exportCSV
                  csvFileName='userData.csv'
                  options={{ afterDeleteRow: this.onDeleteRow}}>
-                    <TableHeaderColumn isKey dataField='id' width="70">ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='name'>Name</TableHeaderColumn> 
-                    <TableHeaderColumn dataField='email'>Email</TableHeaderColumn>
-                    <TableHeaderColumn dataField='gender' width="70">Gender</TableHeaderColumn>
-                    <TableHeaderColumn dataField='birthDate'>Birth Date</TableHeaderColumn>
-                    <TableHeaderColumn dataField='county'>County</TableHeaderColumn>
-                    <TableHeaderColumn dataField='totalDistance'>Distance Traveled</TableHeaderColumn>
+                    <TableHeaderColumn isKey dataField='id' width="70" dataSort={true}>ID</TableHeaderColumn>
+                    <TableHeaderColumn dataField='name' dataSort={true}>Name</TableHeaderColumn> 
+                    <TableHeaderColumn dataField='email' dataSort={true}>Email</TableHeaderColumn>
+                    <TableHeaderColumn dataField='gender' width="70" dataSort={true}>Gender</TableHeaderColumn>
+                    <TableHeaderColumn dataField='birthDate' dataSort={true}>Birth Date</TableHeaderColumn>
+                    <TableHeaderColumn dataField='county' dataSort={true}>County</TableHeaderColumn>
+                    <TableHeaderColumn dataField='totalDistance' dataSort={true}>Distance Traveled</TableHeaderColumn>
                 </BootstrapTable>
                 
             </div>

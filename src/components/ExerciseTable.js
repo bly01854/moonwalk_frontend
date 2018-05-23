@@ -32,7 +32,7 @@ class ExerciseTable extends Component{
         return (
             
             <div>
-                <PageHeader>Exercise Table</PageHeader>
+                <PageHeader className="table-header">Exercise Table</PageHeader>
                 <BootstrapTable data={this.state.data}
                  pagination={true}
                  selectRow={{mode: 'checkbox'}}
@@ -40,11 +40,11 @@ class ExerciseTable extends Component{
                  exportCSV
                  csvFileName='userData.csv'
                  options={{ afterDeleteRow: this.onDeleteRow}}>
-                    <TableHeaderColumn isKey dataField='id' width="70">ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='distance'width="100">Distance</TableHeaderColumn> 
-                    <TableHeaderColumn dataField='method' width="70">Method</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dayEntered'>Day Entered</TableHeaderColumn>
-                    <TableHeaderColumn dataField='name' dataFormat={this.format}>Entered By</TableHeaderColumn>
+                    <TableHeaderColumn isKey dataField='id' width="70" dataSort={true}>ID</TableHeaderColumn>
+                    <TableHeaderColumn dataField='distance'width="100" dataSort={true}>Distance</TableHeaderColumn> 
+                    <TableHeaderColumn dataField='method' width="70" dataSort={true}>Method</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dayEntered' dataSort={true}>Day Entered</TableHeaderColumn>
+                    <TableHeaderColumn dataField='name' dataFormat={this.format} dataSort={true}>Entered By</TableHeaderColumn>
                 </BootstrapTable>
                 
             </div>

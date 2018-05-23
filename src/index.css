@@ -415,6 +415,14 @@ body {
   margin: 10px;
 }
 
+.admin-nav {
+  border-radius: 0;
+}
+
+.table-header {
+  padding-left: 20px;
+}
+
 @media (max-width: 767px) {
   .navbar-nav {
     margin: 0 !important;
