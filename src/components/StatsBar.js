@@ -15,10 +15,60 @@ class StatsBar extends Component {
     };
   }
 
-  componentDidMount() {}
+
+  componentWillMount() {
+  }
+
+  componentDidMount() {
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.milesData.length < nextProps.milesData.length) this.needsUpdate = true;
+  }
+
+  componentDidUpdate() {
+    if (this.needsUpdate) {
+      this.needsUpdate = false;
+      if (this.state.data.length < 1) {
+        if (this.props.milesData.length > 0) {
+          var tempData = [];
+          for (var i = 0; i < this.props.milesData.length; i++) {
+            if (this.props.milesData[i].method === "W") {
+              tempData[i] = {
+                method: "Walking",
+                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+              };
+            } else if (this.props.milesData[i].method === "R") {
+              tempData[i] = {
+                method: "Running",
+                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+              };
+            } else if (this.props.milesData[i].method === "C") {
+              tempData[i] = {
+                method: "Cycling",
+                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+              };
+            } else if (this.props.milesData[i].method === "O") {
+              tempData[i] = {
+                method: "Other",
+                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+              } 
+            } else{
+              tempData[i] = {
+                method: "Unknown",
+                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+              }
+            }
+          }
+          this.setState({ data: tempData });
+        }
+      }
+    }
+  }
+
 
   render() {
-    if (this.state.data.length < 1) {
+    /*if (this.state.data.length < 1) {
       if (this.props.milesData.length > 0) {
         var tempData = [];
         for (var i = 0; i < this.props.milesData.length; i++) {
@@ -50,9 +100,10 @@ class StatsBar extends Component {
           }
         }
         this.setState({ data: tempData });
+        console.log(tempData)
       }
-    }
-
+    } */
+    console.log(this.state.data)
     return (
       <BarChart
         data={this.state.data}
