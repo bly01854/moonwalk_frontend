@@ -36,27 +36,27 @@ class StatsBar extends Component {
             if (this.props.milesData[i].method === "W") {
               tempData[i] = {
                 method: "Walking",
-                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+                distance: this.props.milesData[i].distance
               };
             } else if (this.props.milesData[i].method === "R") {
               tempData[i] = {
                 method: "Running",
-                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+                distance: this.props.milesData[i].distance
               };
             } else if (this.props.milesData[i].method === "C") {
               tempData[i] = {
                 method: "Cycling",
-                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+                distance: this.props.milesData[i].distance
               };
             } else if (this.props.milesData[i].method === "O") {
               tempData[i] = {
                 method: "Other",
-                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+                distance: this.props.milesData[i].distance
               } 
             } else{
               tempData[i] = {
                 method: "Unknown",
-                distance: parseFloat(this.props.milesData[i].distance).toFixed(0)
+                distance: this.props.milesData[i].distance
               }
             }
           }
