@@ -58,7 +58,6 @@ export default class AuthService {
             return data;
         })
     }
-
     deleteUser(userId) {
         return this.fetch(`${this.domain}/api/user/${userId}`, {
             method: 'DELETE'
@@ -66,7 +65,13 @@ export default class AuthService {
             console.log(res);
         })
     }
-
+    deleteExercise(id) {
+        return this.fetch(`${this.domain}/api/exercise/${id}`, {
+            method: 'DELETE'
+        }).then(res => {
+            console.log(res);
+        })
+    }
     getUserExercise(userId) {
         return this.fetch(`${this.domain}/api/exercise/totals/${userId}`, {
             method: 'GET'

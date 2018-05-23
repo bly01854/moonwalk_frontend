@@ -52,10 +52,10 @@ class ExerciseTable extends Component{
     }
 
     onDeleteRow(rowKeys) {
-        alert("You deleted users: " + rowKeys);
+        alert("You deleted exercises: " + rowKeys);
         let length = rowKeys.length;
         for (let i = 0; i<length; i++) {
-            this.Auth.deleteUser(rowKeys[i]);
+            this.Auth.deleteExercise(rowKeys[i]);
         }
         
     }

@@ -162,18 +162,25 @@ class Landing extends Component {
               </div>
             </Row>
             <Row>
+              {/* TEXT BELOW WALK WITH EASE */}
               <div className="ease-content-container">
                 <p>
                   Download and complete a{" "}
+                  {/* <a></a> TAG REPRESENTS A LINK TO SOMEWHERE OR SOMETHING
+                  IF YOU DONT NEED A LINK, JUST REMOVE THE WORDS WITHIN THE TAG */}
                   <a href="../assets/walk-with-ease-survey.pdf" download>
                     Walk with Ease Preliminary Survey
                   </a>{" "}
                   and bring it to the Christian County Health Department for a{" "}
+                  {/* STRONG MAKES TEXT BOLDER AND LARGER */}
                   <strong>FREE MISSION TO THE MOON T-SHIRT!</strong>
                 </p>
                 <p>
+                  {/*CENTERED CONTENT IN <center></center> */}
                   <center>(Limited Supply -- First Come, First Served!)</center>
                 </p>
+                {/* TEXT BELOW IS IN A HALF CONTAINER, IF YOU DONT NEED THE PICTURE ANYMORE
+                AND WANT JUST TEXT, DELETE className="half-container" */}
                 <div className="half-container">
                   <p>
                     No matter if you need relief from arthritis pain or just
@@ -182,6 +189,9 @@ class Landing extends Component {
                     safely make physcal activity part of your everyday life.
                   </p>
                   <span>Walk With Ease is proven to:</span>
+                  {/* THIS IS A LIST <ul></ul>
+                  <li></li> IS A LIST ITEM
+                  DELETE IF YOU DONT WANT A LIST ANYMORE */}
                   <ul>
                     <li>Reduce the pain and discomfort of arthritis.</li>
                     <li>Increase balance, strength, and walking pace.</li>
@@ -192,6 +202,10 @@ class Landing extends Component {
                   </ul>
                 </div>
                 <div className="half-container">
+                {/* PICTURE FOR MISSION TO THE MOON TSHIRT
+                IF YOU WANT ANOTHER PICTURE, PUT DESIRED PICTURE IN ASSETS FOLDER,
+              THEN AFTER in src={require below,  CHANGE  mttm-shirt.png TO THE PICTURES NAME
+              IF YOU DONT NEED A PICTURE AT ALL, JUST REMOVE THE WHOLE <img/> TAG  */}
                   <img
                     className="shirt-img"
                     src={require("../assets/mttm-shirt.png")}
