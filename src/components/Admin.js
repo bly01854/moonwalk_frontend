@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import UsersTable from './UsersTable';
+import ExerciseTable from './ExerciseTable';
 import AuthService from './AuthService';
 
 import AdminNavbar from './AdminNavbar';
@@ -28,6 +29,7 @@ class Admin extends Component{
                 <AdminNavbar/>
                 <Switch>
                     <Route path="/admin/usertable" component={UsersTable}/>
+                    <Route path="/admin/exercisetable" component={ExerciseTable}/>
                 </Switch>
             </div>
             </BrowserRouter>

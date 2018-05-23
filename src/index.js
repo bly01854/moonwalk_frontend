@@ -21,7 +21,8 @@ ReactDOM.render((
     <HashRouter>
         <Switch>
             <Route exact path="/" component={App}/>
-            <Route path="/admin" component={Admin}/>
+            <Route path="/admin" component={Admin}>
+            </Route>
         </Switch>
         
     </HashRouter>

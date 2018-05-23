@@ -2,8 +2,10 @@ import decode from 'jwt-decode';
 
 export default class AuthService {
 
+    // actual domain: "https://moonwalk-dev.herokuapp.com"
+
     constructor(domain) {
-        this.domain = domain || "https://moonwalk-dev.herokuapp.com" //API server domain
+        this.domain = domain || "http://localhost:3000" //API server domain
         this.fetch = this.fetch.bind(this)
         this.login = this.login.bind(this)
         this.getProfile = this.getProfile.bind(this) 
@@ -34,8 +36,23 @@ export default class AuthService {
         })
     }
 
+    // Admin calls
     getAllUsers() {
         return this.fetch(`${this.domain}/api/admin/user`, {
+            method: 'GET'
+        }).then(data => {
+            return data;
+        })
+    }
+    getAllExercise() {
+        return this.fetch(`${this.domain}/api/admin/exercise`, {
+            method: 'GET'
+        }).then(data => {
+            return data;
+        })
+    }
+    getAllFields() {
+        return this.fetch(`${this.domain}/api/admin/fields`, {
             method: 'GET'
         }).then(data => {
             return data;

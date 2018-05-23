@@ -29,7 +29,7 @@ class AdminNavbar extends Component {
               <Link to='/admin/usertable'>Users</Link>
             </NavItem>
             <NavItem eventKey={2} href="#">
-              Link
+            <Link to='/admin/exercisetable'>Exercises</Link>
             </NavItem>
             <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Action</MenuItem>
