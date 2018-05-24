@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Alert } from 'react-bootstrap';
 
 import AuthService from './AuthService';
 
@@ -13,6 +14,7 @@ class Login extends Component {
     this.state = ({
       email: "",
       password: "",
+      loginError: false,
     });
 
     this.handleEmailChange = this.handleEmailChange.bind(this);
@@ -47,6 +49,7 @@ class Login extends Component {
       )
       .catch(err => {
         console.log(err);
+        this.setState({loginError: true})
       })
       /*$.ajax(url, {
         context: this,
@@ -70,6 +73,7 @@ class Login extends Component {
 
     return (
       <form>
+        {this.state.loginError && <Alert bsStyle="warning">Wrong Username or Password!</Alert>}
         <p className="user-input-label" type="Email:">
           <input type="email"
             className="user-input-input"
