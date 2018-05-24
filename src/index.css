@@ -419,6 +419,12 @@ body {
   border-radius: 0;
 }
 
+.admin-nav-title {
+  height: 65px;
+  line-height: 65px;
+  padding: 0;
+}
+
 .table-header {
   padding-left: 20px;
 }

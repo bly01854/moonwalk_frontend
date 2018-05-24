@@ -19,7 +19,7 @@ class AdminNavbar extends Component {
       <Navbar inverse collapseOnSelect className="admin-nav">
         <Navbar.Header>
           <Navbar.Brand >
-            <a href="/" target="_self">Mission to the Moon</a>
+            <a href="/" target="_self" className="admin-nav-title">Mission to the Moon</a>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
