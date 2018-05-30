@@ -98,7 +98,7 @@ class Navigation extends Component {
               </Nav>
             ) : (
               <Nav pullRight className="extra-pull">
-              <NavItem eventKey={1} onSelect={this.loginShow}>
+              <NavItem onSelect={this.loginShow}>
               Login
             </NavItem>
             <Modal show={this.state.logShow} onHide={this.loginClose} >
@@ -109,7 +109,7 @@ class Navigation extends Component {
                 <Login handleLogin={this.handleLogin} update={this.update} />
               </Modal.Body>
             </Modal>
-            <NavItem eventKey={2} onSelect={this.registerShow}>
+            <NavItem onSelect={this.registerShow}>
               Register
             </NavItem>
             <Modal show={this.state.regShow} onHide={this.registerClose}>

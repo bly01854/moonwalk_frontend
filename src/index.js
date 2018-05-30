@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Admin from './components/Admin'
 import registerServiceWorker from './registerServiceWorker';
-import {HashRouter, Route, Switch } from 'react-router-dom';
+import {BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // Bootstrap, Font-Awesome and CSS
 import 'bootstrap/dist/css/bootstrap.css';
@@ -18,12 +18,12 @@ import 'vex-js/dist/css/vex-theme-flat-attack.css';
 
 
 ReactDOM.render((
-    <HashRouter>
+    <BrowserRouter>
         <Switch>
             <Route exact path="/" component={App}/>
             <Route path="/admin" component={Admin}/>>
         </Switch>
         
-    </HashRouter>
+    </BrowserRouter>
 ), document.getElementById('root'));
 registerServiceWorker();

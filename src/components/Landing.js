@@ -168,7 +168,7 @@ class Landing extends Component {
                   Download and complete a{" "}
                   {/* <a></a> TAG REPRESENTS A LINK TO SOMEWHERE OR SOMETHING
                   IF YOU DONT NEED A LINK, JUST REMOVE THE WORDS WITHIN THE TAG */}
-                  <a href="../assets/walk-with-ease-survey.pdf" download>
+                  <a href={require("../assets/walk-with-ease-survey.pdf")} target="_blank">
                     Walk with Ease Preliminary Survey
                   </a>{" "}
                   and bring it to the Christian County Health Department for a{" "}
