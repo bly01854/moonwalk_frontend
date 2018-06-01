@@ -20,6 +20,7 @@ class Register extends Component {
       gender: "M",
       preferredMeasure: "MI",
       passwordMatch: true,
+      registerError: false,
     });
 
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -76,29 +77,58 @@ class Register extends Component {
       gender: this.state.gender,
       preferredMeasure: this.state.preferredMeasure
     }
-    $.ajax(url, {
+
+    function handleErrors(response) {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    }
+
+    fetch(url, {
+      method: 'POST',
+      body: postData,
+      headers:{
+        'Content-Type': 'application/json',
+      }
+    }).then(handleErrors)
+    .then(response => {
+      vex.dialog.alert({
+        message: "Registered Successfully, now login and get moving!",
+        
+      });
+      this.registerClose();
+    })
+    .catch(error => {
+      this.setState({registerError: true})
+      console.log(error)
+    })
+
+
+   /* $.ajax(url, {
       context: this,
       type: "POST",
       data: postData,
       dataType: "json",
       success: function(data) {
-        console.log("success");
         vex.dialog.alert({
           message: "Registered Successfully, now login and get moving!",
           
         });
         this.registerClose();
       },
-      error: function() {
+      error: function(jqXHR, textStatus, errorThrown) {
+        
       },
       
-    });
+    });*/
   } }
 
   render() {
     return (
       <form>
         {!this.state.passwordMatch && <Alert bsStyle="warning">Passwords do not match!</Alert>}
+        {this.state.registerError && <Alert bsStyle="warning">Registration Error! Email may already be in use or registration form was not filled out correctly.</Alert>}
         <p className="user-input-label" type="Email:">
           <input type="text"
             className="user-input-input"
@@ -263,7 +293,7 @@ class Register extends Component {
             </select>
         </p>
         
-        <button className="user-input-button" onClick={this.registerUser}>Register</button>
+        <button className="user-input-button" onClick={this.registerUser} type="submit">Register</button>
       </form>
     );
   }
